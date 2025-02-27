@@ -14,7 +14,7 @@ const baseAvatar = style({
   borderRadius: '50%',
   backgroundColor: vars.color.background.subtle,
   color: vars.color.text.primary,
-  fontWeight: vars.typography.fontWeight.medium,
+  fontWeight: vars.typography.fontWeight.medium
 });
 
 // 아바타 이미지 스타일
@@ -22,7 +22,7 @@ export const avatarImg = style({
   width: '100%',
   height: '100%',
   objectFit: 'cover',
-  borderRadius: '50%',
+  borderRadius: '50%'
 });
 
 // 아바타 폴백(이미지 없을 때 텍스트) 스타일
@@ -35,7 +35,7 @@ export const avatarFallback = style({
   backgroundColor: vars.color.primary,
   color: vars.color.button.primary.text,
   fontSize: '50%',
-  fontWeight: vars.typography.fontWeight.medium,
+  fontWeight: vars.typography.fontWeight.medium
 });
 
 // 아바타 크기
@@ -54,53 +54,53 @@ export const avatar = recipe({
       xs: {
         width: vars.spacing[6],
         height: vars.spacing[6],
-        fontSize: vars.typography.fontSize.xs,
+        fontSize: vars.typography.fontSize.xs
       },
       sm: {
         width: vars.spacing[8],
         height: vars.spacing[8],
-        fontSize: vars.typography.fontSize.sm,
+        fontSize: vars.typography.fontSize.sm
       },
       md: {
         width: vars.spacing[10],
         height: vars.spacing[10],
-        fontSize: vars.typography.fontSize.md,
+        fontSize: vars.typography.fontSize.md
       },
       lg: {
         width: vars.spacing[12],
         height: vars.spacing[12],
-        fontSize: vars.typography.fontSize.lg,
+        fontSize: vars.typography.fontSize.lg
       },
       xl: {
         width: vars.spacing[16],
         height: vars.spacing[16],
-        fontSize: vars.typography.fontSize.xl,
+        fontSize: vars.typography.fontSize.xl
       },
       '2xl': {
         width: vars.spacing[24],
         height: vars.spacing[24],
-        fontSize: vars.typography.fontSize['2xl'],
-      },
+        fontSize: vars.typography.fontSize['2xl']
+      }
     },
 
     // 아바타 모양
     shape: {
       circle: {
-        borderRadius: '50%',
+        borderRadius: '50%'
       },
       square: {
-        borderRadius: 0,
+        borderRadius: 0
       },
       rounded: {
-        borderRadius: vars.borderRadius.md,
-      },
+        borderRadius: vars.borderRadius.md
+      }
     },
 
     // 테두리 여부
     bordered: {
       true: {
-        border: `2px solid ${vars.color.background.default}`,
-      },
+        border: `2px solid ${vars.color.background.default}`
+      }
     },
 
     // 온라인 상태 표시
@@ -116,9 +116,9 @@ export const avatar = recipe({
             height: '20%',
             borderRadius: '50%',
             backgroundColor: vars.color.success,
-            border: `2px solid ${vars.color.background.default}`,
-          },
-        },
+            border: `2px solid ${vars.color.background.default}`
+          }
+        }
       },
       offline: {
         selectors: {
@@ -131,9 +131,9 @@ export const avatar = recipe({
             height: '20%',
             borderRadius: '50%',
             backgroundColor: vars.color.text.disabled,
-            border: `2px solid ${vars.color.background.default}`,
-          },
-        },
+            border: `2px solid ${vars.color.background.default}`
+          }
+        }
       },
       busy: {
         selectors: {
@@ -146,9 +146,9 @@ export const avatar = recipe({
             height: '20%',
             borderRadius: '50%',
             backgroundColor: vars.color.error,
-            border: `2px solid ${vars.color.background.default}`,
-          },
-        },
+            border: `2px solid ${vars.color.background.default}`
+          }
+        }
       },
       away: {
         selectors: {
@@ -161,11 +161,11 @@ export const avatar = recipe({
             height: '20%',
             borderRadius: '50%',
             backgroundColor: vars.color.warning,
-            border: `2px solid ${vars.color.background.default}`,
-          },
-        },
-      },
-    },
+            border: `2px solid ${vars.color.background.default}`
+          }
+        }
+      }
+    }
   },
 
   // 컴파운드 베리언트 - 조합에 따른 특수 스타일
@@ -173,24 +173,24 @@ export const avatar = recipe({
     // 크기에 따른 상태 표시기 조정
     {
       variants: {
-        size: 'xs',
+        size: 'xs'
       },
       style: {
         selectors: {
           '&::after': {
-            border: `1px solid ${vars.color.background.default}`,
-          },
-        },
-      },
-    },
+            border: `1px solid ${vars.color.background.default}`
+          }
+        }
+      }
+    }
   ],
 
   // 기본값
   defaultVariants: {
     size: 'md',
     shape: 'circle',
-    bordered: false,
-  },
+    bordered: false
+  }
 });
 
 // 아바타 그룹 스타일
@@ -200,9 +200,9 @@ export const avatarGroup = style({
 
   selectors: {
     '& > *:not(:first-child)': {
-      marginLeft: `-${vars.spacing[2]}`,
-    },
-  },
+      marginLeft: `-${vars.spacing[2]}`
+    }
+  }
 });
 
 export type AvatarStyleVariants = RecipeVariants<typeof avatar>;

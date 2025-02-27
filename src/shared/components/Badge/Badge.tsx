@@ -1,12 +1,5 @@
 import React, { forwardRef } from 'react';
-import {
-  badge,
-  badgeContent,
-  BadgeVariant,
-  BadgeColor,
-  BadgeSize,
-  BadgePlacement,
-} from './Badge.css';
+import { badge, badgeContent, BadgeVariant, BadgeColor, BadgeSize, BadgePlacement } from './Badge.css';
 import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
 
 export interface BadgeProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'content'> {
@@ -43,110 +36,108 @@ export interface BadgeProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
  * - 숫자나 텍스트를 표시하는 작은 뱃지
  * - 다른 컴포넌트에 붙이거나 독립적으로 사용 가능
  */
-export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  (props, ref) => {
-    const {
-      content,
-      children,
-      color = 'primary',
-      variant = 'standard',
-      size = 'md',
-      max = 99,
-      dot = false,
-      visible = true,
-      standalone = false,
-      placement = 'top-right',
-      offsetX,
-      offsetY,
-      overlap = false,
-      ...rest
-    } = props;
+export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
+  const {
+    content,
+    children,
+    color = 'primary',
+    variant = 'standard',
+    size = 'md',
+    max = 99,
+    dot = false,
+    visible = true,
+    standalone = false,
+    placement = 'top-right',
+    offsetX,
+    offsetY,
+    overlap = false,
+    ...rest
+  } = props;
 
-    const [className, style, restProps] = extractStyleProps(rest);
+  const [className, style, restProps] = extractStyleProps(rest);
 
-    // 표시할 내용 계산
-    const displayContent = () => {
-      if (dot) return null;
+  // 표시할 내용 계산
+  const displayContent = () => {
+    if (dot) return null;
 
-      if (content !== undefined) {
-        if (typeof content === 'number' && content > max) {
-          return `${max}+`;
-        }
-        return content;
+    if (content !== undefined) {
+      if (typeof content === 'number' && content > max) {
+        return `${max}+`;
       }
-
-      return null;
-    };
-
-    // 위치 오프셋 스타일
-    const offsetStyle: React.CSSProperties = {};
-    if (offsetX !== undefined) {
-      offsetStyle.transform = `translateX(${offsetX}px)`;
-    }
-    if (offsetY !== undefined) {
-      const existingTransform = offsetStyle.transform ? offsetStyle.transform + ' ' : '';
-      offsetStyle.transform = `${existingTransform}translateY(${offsetY}px)`;
+      return content;
     }
 
-    // 독립형 뱃지인 경우 간단하게 렌더링
-    if (standalone) {
-      return (
-        <div
-          ref={ref}
-          className={mergeStyles(
-            badgeContent({
-              color,
-              variant,
-              size,
-              dot,
-              visible
-            }),
-            className
-          )}
-          style={{ ...style, ...offsetStyle }}
-          {...restProps}
-        >
-          {dot ? null : displayContent()}
-        </div>
-      );
-    }
+    return null;
+  };
 
-    // 뱃지가 보이지 않으면 children만 렌더링
-    if (!visible) {
-      return <>{children}</>;
-    }
+  // 위치 오프셋 스타일
+  const offsetStyle: React.CSSProperties = {};
+  if (offsetX !== undefined) {
+    offsetStyle.transform = `translateX(${offsetX}px)`;
+  }
+  if (offsetY !== undefined) {
+    const existingTransform = offsetStyle.transform ? offsetStyle.transform + ' ' : '';
+    offsetStyle.transform = `${existingTransform}translateY(${offsetY}px)`;
+  }
 
+  // 독립형 뱃지인 경우 간단하게 렌더링
+  if (standalone) {
     return (
       <div
         ref={ref}
         className={mergeStyles(
-          badge({
-            placement,
-            overlap
-          }),
-          className
-        )}
-        style={style}
-        {...restProps}
-      >
-        {children}
-
-        <span
-          className={badgeContent({
+          badgeContent({
             color,
             variant,
             size,
             dot,
-            visible: true
-          })}
-          style={offsetStyle}
-        >
-          {dot ? null : displayContent()}
-        </span>
+            visible
+          }),
+          className
+        )}
+        style={{ ...style, ...offsetStyle }}
+        {...restProps}
+      >
+        {dot ? null : displayContent()}
       </div>
     );
   }
-);
+
+  // 뱃지가 보이지 않으면 children만 렌더링
+  if (!visible) {
+    return <>{children}</>;
+  }
+
+  return (
+    <div
+      ref={ref}
+      className={mergeStyles(
+        badge({
+          placement,
+          overlap
+        }),
+        className
+      )}
+      style={style}
+      {...restProps}
+    >
+      {children}
+
+      <span
+        className={badgeContent({
+          color,
+          variant,
+          size,
+          dot,
+          visible: true
+        })}
+        style={offsetStyle}
+      >
+        {dot ? null : displayContent()}
+      </span>
+    </div>
+  );
+});
 
 Badge.displayName = 'Badge';
 

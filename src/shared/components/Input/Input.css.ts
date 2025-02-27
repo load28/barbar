@@ -5,7 +5,7 @@ import { vars } from '@bb/styles/theme.css';
 // 기본 입력 필드 컨테이너 스타일
 const inputWrapperBase = style({
   position: 'relative',
-  width: '100%',
+  width: '100%'
 });
 
 // 기본 라벨 스타일
@@ -14,7 +14,7 @@ export const inputLabel = style({
   marginBottom: vars.spacing[1],
   fontSize: vars.typography.fontSize.sm,
   fontWeight: vars.typography.fontWeight.medium,
-  color: vars.color.text.secondary,
+  color: vars.color.text.secondary
 });
 
 // 기본 입력 필드 스타일
@@ -33,20 +33,20 @@ const inputBase = style({
   WebkitAppearance: 'none',
 
   '::placeholder': {
-    color: vars.color.text.hint,
+    color: vars.color.text.hint
   },
 
   ':focus': {
     outline: 'none',
     borderColor: vars.color.border.focus,
-    boxShadow: `0 0 0 1px ${vars.color.border.focus}`,
+    boxShadow: `0 0 0 1px ${vars.color.border.focus}`
   },
 
   ':disabled': {
     backgroundColor: vars.color.background.subtle,
     color: vars.color.text.disabled,
-    cursor: 'not-allowed',
-  },
+    cursor: 'not-allowed'
+  }
 });
 
 // 유효성 검사 상태
@@ -59,14 +59,14 @@ export type InputSize = 'sm' | 'md' | 'lg';
 export const errorMessage = style({
   color: vars.color.error,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1],
+  marginTop: vars.spacing[1]
 });
 
 // 도움말 텍스트 스타일
 export const helperText = style({
   color: vars.color.text.hint,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1],
+  marginTop: vars.spacing[1]
 });
 
 // 접두/접미 아이콘 컨테이너 기본 스타일
@@ -78,14 +78,14 @@ const iconBaseStyle = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  pointerEvents: 'none',
+  pointerEvents: 'none'
 });
 
 // 접두 아이콘 스타일
 export const prefixIconContainer = style([
   iconBaseStyle,
   {
-    left: vars.spacing[3],
+    left: vars.spacing[3]
   }
 ]);
 
@@ -93,7 +93,7 @@ export const prefixIconContainer = style([
 export const suffixIconContainer = style([
   iconBaseStyle,
   {
-    right: vars.spacing[3],
+    right: vars.spacing[3]
   }
 ]);
 
@@ -107,18 +107,18 @@ export const input = recipe({
       sm: {
         height: vars.spacing[8],
         padding: `0 ${vars.spacing[3]}`,
-        fontSize: vars.typography.fontSize.sm,
+        fontSize: vars.typography.fontSize.sm
       },
       md: {
         height: vars.spacing[10],
         padding: `0 ${vars.spacing[4]}`,
-        fontSize: vars.typography.fontSize.md,
+        fontSize: vars.typography.fontSize.md
       },
       lg: {
         height: vars.spacing[12],
         padding: `0 ${vars.spacing[5]}`,
-        fontSize: vars.typography.fontSize.lg,
-      },
+        fontSize: vars.typography.fontSize.lg
+      }
     },
 
     // 유효성 검사 상태
@@ -127,27 +127,27 @@ export const input = recipe({
         borderColor: vars.color.success,
         ':focus': {
           borderColor: vars.color.success,
-          boxShadow: `0 0 0 1px ${vars.color.success}`,
-        },
+          boxShadow: `0 0 0 1px ${vars.color.success}`
+        }
       },
       invalid: {
         borderColor: vars.color.error,
         ':focus': {
           borderColor: vars.color.error,
-          boxShadow: `0 0 0 1px ${vars.color.error}`,
-        },
+          boxShadow: `0 0 0 1px ${vars.color.error}`
+        }
       },
-      none: {},
+      none: {}
     },
 
     // 접두 아이콘 여부
     hasPrefixIcon: {
-      true: {},
+      true: {}
     },
 
     // 접미 아이콘 여부
     hasSuffixIcon: {
-      true: {},
+      true: {}
     },
 
     // 비활성화 상태
@@ -155,19 +155,19 @@ export const input = recipe({
       true: {
         backgroundColor: vars.color.background.subtle,
         color: vars.color.text.disabled,
-        cursor: 'not-allowed',
-      },
+        cursor: 'not-allowed'
+      }
     },
 
     // 전체 너비 설정
     fullWidth: {
       true: {
-        width: '100%',
+        width: '100%'
       },
       false: {
-        width: 'auto',
-      },
-    },
+        width: 'auto'
+      }
+    }
   },
 
   // 컴파운드 베리언트 - 조합에 따른 특수 스타일
@@ -176,59 +176,59 @@ export const input = recipe({
     {
       variants: {
         hasPrefixIcon: true,
-        size: 'sm',
+        size: 'sm'
       },
       style: {
-        paddingLeft: vars.spacing[6],
-      },
+        paddingLeft: vars.spacing[6]
+      }
     },
     {
       variants: {
         hasPrefixIcon: true,
-        size: 'md',
+        size: 'md'
       },
       style: {
-        paddingLeft: vars.spacing[8],
-      },
+        paddingLeft: vars.spacing[8]
+      }
     },
     {
       variants: {
         hasPrefixIcon: true,
-        size: 'lg',
+        size: 'lg'
       },
       style: {
-        paddingLeft: vars.spacing[10],
-      },
+        paddingLeft: vars.spacing[10]
+      }
     },
 
     // 접미 아이콘이 있을 때 패딩 조정
     {
       variants: {
         hasSuffixIcon: true,
-        size: 'sm',
+        size: 'sm'
       },
       style: {
-        paddingRight: vars.spacing[6],
-      },
+        paddingRight: vars.spacing[6]
+      }
     },
     {
       variants: {
         hasSuffixIcon: true,
-        size: 'md',
+        size: 'md'
       },
       style: {
-        paddingRight: vars.spacing[8],
-      },
+        paddingRight: vars.spacing[8]
+      }
     },
     {
       variants: {
         hasSuffixIcon: true,
-        size: 'lg',
+        size: 'lg'
       },
       style: {
-        paddingRight: vars.spacing[10],
-      },
-    },
+        paddingRight: vars.spacing[10]
+      }
+    }
   ],
 
   // 기본값
@@ -238,8 +238,8 @@ export const input = recipe({
     disabled: false,
     fullWidth: true,
     hasPrefixIcon: false,
-    hasSuffixIcon: false,
-  },
+    hasSuffixIcon: false
+  }
 });
 
 // 입력 필드 컨테이너 레시피
@@ -249,17 +249,17 @@ export const inputWrapper = recipe({
   variants: {
     fullWidth: {
       true: {
-        width: '100%',
+        width: '100%'
       },
       false: {
-        width: 'auto',
-      },
-    },
+        width: 'auto'
+      }
+    }
   },
 
   defaultVariants: {
-    fullWidth: true,
-  },
+    fullWidth: true
+  }
 });
 
 export type InputStyleVariants = RecipeVariants<typeof input>;

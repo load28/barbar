@@ -39,7 +39,7 @@ export function extractStyleProps<T extends { className?: string; style?: React.
  */
 export function mergeRefs<T = any>(...refs: Array<React.MutableRefObject<T> | React.LegacyRef<T> | null | undefined>) {
   return (value: T) => {
-    refs.forEach(ref => {
+    refs.forEach((ref) => {
       if (typeof ref === 'function') {
         ref(value);
       } else if (ref != null) {
@@ -57,21 +57,45 @@ export function mergeRefs<T = any>(...refs: Array<React.MutableRefObject<T> | Re
 export function isDOMProp(propName: string): boolean {
   const validDOMProps = [
     // 공통 속성
-    'id', 'className', 'style', 'tabIndex', 'role', 'aria-', 'data-',
+    'id',
+    'className',
+    'style',
+    'tabIndex',
+    'role',
+    'aria-',
+    'data-',
     // 이벤트 핸들러
-    'on', 'onClick', 'onChange', 'onBlur', 'onFocus', 'onMouseEnter', 'onMouseLeave',
+    'on',
+    'onClick',
+    'onChange',
+    'onBlur',
+    'onFocus',
+    'onMouseEnter',
+    'onMouseLeave',
     // 폼 속성
-    'name', 'type', 'value', 'defaultValue', 'checked', 'defaultChecked', 'disabled', 'required',
-    'placeholder', 'autoComplete', 'autoFocus',
+    'name',
+    'type',
+    'value',
+    'defaultValue',
+    'checked',
+    'defaultChecked',
+    'disabled',
+    'required',
+    'placeholder',
+    'autoComplete',
+    'autoFocus',
     // 기타 일반적인 속성
-    'href', 'src', 'alt', 'title', 'rel', 'target'
+    'href',
+    'src',
+    'alt',
+    'title',
+    'rel',
+    'target'
   ];
 
-  return validDOMProps.some(prop =>
-    propName === prop ||
-    propName.startsWith('on') ||
-    propName.startsWith('aria-') ||
-    propName.startsWith('data-')
+  return validDOMProps.some(
+    (prop) =>
+      propName === prop || propName.startsWith('on') || propName.startsWith('aria-') || propName.startsWith('data-')
   );
 }
 
@@ -81,10 +105,13 @@ export function isDOMProp(propName: string): boolean {
  * @returns DOM 속성만 포함한 객체
  */
 export function extractDOMProps(props: Record<string, any>): Record<string, any> {
-  return Object.keys(props).reduce((domProps, propName) => {
-    if (isDOMProp(propName)) {
-      domProps[propName] = props[propName];
-    }
-    return domProps;
-  }, {} as Record<string, any>);
+  return Object.keys(props).reduce(
+    (domProps, propName) => {
+      if (isDOMProp(propName)) {
+        domProps[propName] = props[propName];
+      }
+      return domProps;
+    },
+    {} as Record<string, any>
+  );
 }

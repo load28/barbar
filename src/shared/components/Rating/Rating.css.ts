@@ -7,21 +7,21 @@ export const ratingContainer = recipe({
   base: {
     display: 'inline-flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'flex-start'
   },
 
   variants: {
     // 평점 크기
     size: {
       sm: {
-        fontSize: vars.typography.fontSize.sm,
+        fontSize: vars.typography.fontSize.sm
       },
       md: {
-        fontSize: vars.typography.fontSize.md,
+        fontSize: vars.typography.fontSize.md
       },
       lg: {
-        fontSize: vars.typography.fontSize.lg,
-      },
+        fontSize: vars.typography.fontSize.lg
+      }
     },
 
     // 평점 표시 방식
@@ -29,16 +29,16 @@ export const ratingContainer = recipe({
       star: {},
       number: {},
       bar: {
-        width: '100%',
+        width: '100%'
       },
-      icon: {},
-    },
+      icon: {}
+    }
   },
 
   defaultVariants: {
     size: 'md',
-    variant: 'star',
-  },
+    variant: 'star'
+  }
 });
 
 // 평점 라벨 스타일
@@ -46,21 +46,21 @@ export const ratingLabel = style({
   fontSize: '0.85em',
   color: vars.color.text.secondary,
   marginBottom: vars.spacing[1],
-  fontWeight: vars.typography.fontWeight.medium,
+  fontWeight: vars.typography.fontWeight.medium
 });
 
 // 별점 컨테이너 스타일
 export const ratingStarsContainer = style({
   display: 'flex',
   alignItems: 'center',
-  gap: vars.spacing[1],
+  gap: vars.spacing[1]
 });
 
 // 별 기본 스타일
 export const ratingStarBase = style({
   position: 'relative',
   display: 'inline-block',
-  color: vars.color.text.hint,
+  color: vars.color.text.hint
 });
 
 // 별 채워진 스타일
@@ -68,19 +68,19 @@ export const ratingStarFilled = style({
   position: 'absolute',
   top: 0,
   left: 0,
-  color: 'var(--rating-color, ' + vars.color.warning + ')',
+  color: 'var(--rating-color, ' + vars.color.warning + ')'
 });
 
 // 별 빈 스타일
 export const ratingStarEmpty = style({
-  color: vars.color.text.disabled,
+  color: vars.color.text.disabled
 });
 
 // 숫자 평점 컨테이너 스타일
 export const ratingTextContainer = style({
   display: 'flex',
   alignItems: 'baseline',
-  gap: vars.spacing[1],
+  gap: vars.spacing[1]
 });
 
 // 평점 값 스타일
@@ -89,13 +89,13 @@ export const ratingValue = style({
   color: 'var(--rating-color, ' + vars.color.warning + ')',
   display: 'flex',
   alignItems: 'center',
-  gap: vars.spacing[1],
+  gap: vars.spacing[1]
 });
 
 // 최대 평점 스타일
 export const ratingMax = style({
   color: vars.color.text.secondary,
-  fontSize: '0.85em',
+  fontSize: '0.85em'
 });
 
 // 바 형태 컨테이너 스타일
@@ -103,7 +103,7 @@ export const ratingBarContainer = style({
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.spacing[1],
+  gap: vars.spacing[1]
 });
 
 // 바 스타일
@@ -112,7 +112,7 @@ export const barStyle = style({
   height: '8px',
   backgroundColor: vars.color.background.subtle,
   borderRadius: vars.borderRadius.full,
-  overflow: 'hidden',
+  overflow: 'hidden'
 });
 
 // 바 채움 스타일
@@ -120,7 +120,7 @@ export const ratingBarFill = style({
   height: '100%',
   backgroundColor: 'var(--rating-color, ' + vars.color.warning + ')',
   borderRadius: vars.borderRadius.full,
-  transition: `width ${vars.motion.duration.normal} ${vars.motion.easing.easeInOut}`,
+  transition: `width ${vars.motion.duration.normal} ${vars.motion.easing.easeInOut}`
 });
 
 // 바 라벨 스타일
@@ -130,7 +130,7 @@ export const ratingBarLabel = style({
   width: '100%',
   fontSize: '0.85em',
   color: vars.color.text.secondary,
-  fontWeight: vars.typography.fontWeight.medium,
+  fontWeight: vars.typography.fontWeight.medium
 });
 
 // 바 값 텍스트 스타일
@@ -138,14 +138,14 @@ export const ratingBarValueText = style({
   marginTop: vars.spacing[1],
   fontSize: '0.8em',
   color: vars.color.text.secondary,
-  textAlign: 'right',
+  textAlign: 'right'
 });
 
 // 아이콘 컨테이너 스타일
 export const ratingIconContainer = style({
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
+  alignItems: 'center'
 });
 
 // 평점 스타일 종류

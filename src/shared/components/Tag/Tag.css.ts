@@ -18,7 +18,7 @@ export const tag = recipe({
       opacity ${vars.motion.duration.fast} ${vars.motion.easing.easeInOut}
     `,
     fontFamily: vars.typography.fontFamily.base,
-    fontWeight: vars.typography.fontWeight.medium,
+    fontWeight: vars.typography.fontWeight.medium
   },
 
   variants: {
@@ -30,16 +30,16 @@ export const tag = recipe({
       success: {},
       warning: {},
       error: {},
-      info: {},
+      info: {}
     },
 
     // 태그 변형
     variant: {
       filled: {},
       outlined: {
-        backgroundColor: 'transparent',
+        backgroundColor: 'transparent'
       },
-      light: {},
+      light: {}
     },
 
     // 태그 크기
@@ -47,18 +47,18 @@ export const tag = recipe({
       sm: {
         height: '20px',
         padding: '0 8px',
-        fontSize: vars.typography.fontSize.xs,
+        fontSize: vars.typography.fontSize.xs
       },
       md: {
         height: '24px',
         padding: '0 10px',
-        fontSize: vars.typography.fontSize.sm,
+        fontSize: vars.typography.fontSize.sm
       },
       lg: {
         height: '30px',
         padding: '0 12px',
-        fontSize: vars.typography.fontSize.md,
-      },
+        fontSize: vars.typography.fontSize.md
+      }
     },
 
     // 비활성화 상태
@@ -66,8 +66,8 @@ export const tag = recipe({
       true: {
         opacity: 0.5,
         cursor: 'not-allowed',
-        pointerEvents: 'none',
-      },
+        pointerEvents: 'none'
+      }
     },
 
     // 클릭 가능 여부
@@ -75,13 +75,13 @@ export const tag = recipe({
       true: {
         cursor: 'pointer',
         ':hover': {
-          filter: 'brightness(0.95)',
+          filter: 'brightness(0.95)'
         },
         ':active': {
-          filter: 'brightness(0.9)',
-        },
-      },
-    },
+          filter: 'brightness(0.9)'
+        }
+      }
+    }
   },
 
   compoundVariants: [
@@ -89,217 +89,217 @@ export const tag = recipe({
     {
       variants: {
         variant: 'filled',
-        color: 'default',
+        color: 'default'
       },
       style: {
         backgroundColor: vars.color.background.subtle,
-        color: vars.color.text.secondary,
-      },
+        color: vars.color.text.secondary
+      }
     },
     {
       variants: {
         variant: 'filled',
-        color: 'primary',
+        color: 'primary'
       },
       style: {
         backgroundColor: vars.color.primary,
-        color: vars.color.button.primary.text,
-      },
+        color: vars.color.button.primary.text
+      }
     },
     {
       variants: {
         variant: 'filled',
-        color: 'secondary',
+        color: 'secondary'
       },
       style: {
         backgroundColor: vars.color.secondary,
-        color: vars.color.text.primary,
-      },
+        color: vars.color.text.primary
+      }
     },
     {
       variants: {
         variant: 'filled',
-        color: 'success',
+        color: 'success'
       },
       style: {
         backgroundColor: vars.color.success,
-        color: vars.color.button.primary.text,
-      },
+        color: vars.color.button.primary.text
+      }
     },
     {
       variants: {
         variant: 'filled',
-        color: 'warning',
+        color: 'warning'
       },
       style: {
         backgroundColor: vars.color.warning,
-        color: vars.color.text.primary,
-      },
+        color: vars.color.text.primary
+      }
     },
     {
       variants: {
         variant: 'filled',
-        color: 'error',
+        color: 'error'
       },
       style: {
         backgroundColor: vars.color.error,
-        color: vars.color.button.primary.text,
-      },
+        color: vars.color.button.primary.text
+      }
     },
     {
       variants: {
         variant: 'filled',
-        color: 'info',
+        color: 'info'
       },
       style: {
         backgroundColor: vars.color.info,
-        color: vars.color.button.primary.text,
-      },
+        color: vars.color.button.primary.text
+      }
     },
 
     // outlined + color 조합
     {
       variants: {
         variant: 'outlined',
-        color: 'default',
+        color: 'default'
       },
       style: {
         border: `1px solid ${vars.color.border.default}`,
-        color: vars.color.text.secondary,
-      },
+        color: vars.color.text.secondary
+      }
     },
     {
       variants: {
         variant: 'outlined',
-        color: 'primary',
+        color: 'primary'
       },
       style: {
         border: `1px solid ${vars.color.primary}`,
-        color: vars.color.primary,
-      },
+        color: vars.color.primary
+      }
     },
     {
       variants: {
         variant: 'outlined',
-        color: 'secondary',
+        color: 'secondary'
       },
       style: {
         border: `1px solid ${vars.color.secondary}`,
-        color: vars.color.secondary,
-      },
+        color: vars.color.secondary
+      }
     },
     {
       variants: {
         variant: 'outlined',
-        color: 'success',
+        color: 'success'
       },
       style: {
         border: `1px solid ${vars.color.success}`,
-        color: vars.color.success,
-      },
+        color: vars.color.success
+      }
     },
     {
       variants: {
         variant: 'outlined',
-        color: 'warning',
+        color: 'warning'
       },
       style: {
         border: `1px solid ${vars.color.warning}`,
-        color: vars.color.warning,
-      },
+        color: vars.color.warning
+      }
     },
     {
       variants: {
         variant: 'outlined',
-        color: 'error',
+        color: 'error'
       },
       style: {
         border: `1px solid ${vars.color.error}`,
-        color: vars.color.error,
-      },
+        color: vars.color.error
+      }
     },
     {
       variants: {
         variant: 'outlined',
-        color: 'info',
+        color: 'info'
       },
       style: {
         border: `1px solid ${vars.color.info}`,
-        color: vars.color.info,
-      },
+        color: vars.color.info
+      }
     },
 
     // light + color 조합
     {
       variants: {
         variant: 'light',
-        color: 'default',
+        color: 'default'
       },
       style: {
         backgroundColor: vars.color.background.paper,
-        color: vars.color.text.secondary,
-      },
+        color: vars.color.text.secondary
+      }
     },
     {
       variants: {
         variant: 'light',
-        color: 'primary',
+        color: 'primary'
       },
       style: {
         backgroundColor: vars.color.tertiary,
-        color: vars.color.primary,
-      },
+        color: vars.color.primary
+      }
     },
     {
       variants: {
         variant: 'light',
-        color: 'secondary',
+        color: 'secondary'
       },
       style: {
         backgroundColor: 'rgba(255, 158, 92, 0.1)',
-        color: vars.color.secondary,
-      },
+        color: vars.color.secondary
+      }
     },
     {
       variants: {
         variant: 'light',
-        color: 'success',
+        color: 'success'
       },
       style: {
         backgroundColor: 'rgba(34, 197, 94, 0.1)',
-        color: vars.color.success,
-      },
+        color: vars.color.success
+      }
     },
     {
       variants: {
         variant: 'light',
-        color: 'warning',
+        color: 'warning'
       },
       style: {
         backgroundColor: 'rgba(245, 158, 11, 0.1)',
-        color: vars.color.warning,
-      },
+        color: vars.color.warning
+      }
     },
     {
       variants: {
         variant: 'light',
-        color: 'error',
+        color: 'error'
       },
       style: {
         backgroundColor: 'rgba(239, 68, 68, 0.1)',
-        color: vars.color.error,
-      },
+        color: vars.color.error
+      }
     },
     {
       variants: {
         variant: 'light',
-        color: 'info',
+        color: 'info'
       },
       style: {
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
-        color: vars.color.info,
-      },
-    },
+        color: vars.color.info
+      }
+    }
   ],
 
   // 기본값
@@ -308,8 +308,8 @@ export const tag = recipe({
     variant: 'filled',
     size: 'md',
     disabled: false,
-    clickable: false,
-  },
+    clickable: false
+  }
 });
 
 // 태그 라벨 스타일
@@ -317,14 +317,14 @@ export const tagLabel = style({
   display: 'inline-block',
   lineHeight: 1,
   overflow: 'hidden',
-  textOverflow: 'ellipsis',
+  textOverflow: 'ellipsis'
 });
 
 // 태그 아이콘 스타일
 export const tagIcon = style({
   display: 'flex',
   marginRight: '4px',
-  fontSize: '0.9em',
+  fontSize: '0.9em'
 });
 
 // 태그 닫기 버튼 스타일
@@ -338,12 +338,12 @@ export const tagClose = style({
   borderRadius: '50%',
 
   ':hover': {
-    opacity: 0.7,
+    opacity: 0.7
   },
 
   ':focus': {
-    outline: 'none',
-  },
+    outline: 'none'
+  }
 });
 
 // 타입 정의

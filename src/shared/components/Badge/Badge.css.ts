@@ -7,7 +7,7 @@ export const badge = recipe({
   base: {
     position: 'relative',
     display: 'inline-flex',
-    verticalAlign: 'middle',
+    verticalAlign: 'middle'
   },
 
   variants: {
@@ -18,50 +18,50 @@ export const badge = recipe({
           '& > span': {
             top: 0,
             right: 0,
-            transform: 'translate(50%, -50%)',
-          },
-        },
+            transform: 'translate(50%, -50%)'
+          }
+        }
       },
       'top-left': {
         selectors: {
           '& > span': {
             top: 0,
             left: 0,
-            transform: 'translate(-50%, -50%)',
-          },
-        },
+            transform: 'translate(-50%, -50%)'
+          }
+        }
       },
       'bottom-right': {
         selectors: {
           '& > span': {
             bottom: 0,
             right: 0,
-            transform: 'translate(50%, 50%)',
-          },
-        },
+            transform: 'translate(50%, 50%)'
+          }
+        }
       },
       'bottom-left': {
         selectors: {
           '& > span': {
             bottom: 0,
             left: 0,
-            transform: 'translate(-50%, 50%)',
-          },
-        },
-      },
+            transform: 'translate(-50%, 50%)'
+          }
+        }
+      }
     },
 
     // 겹침 설정
     overlap: {
-      true: {},
-    },
+      true: {}
+    }
   },
 
   // 기본값
   defaultVariants: {
     placement: 'top-right',
-    overlap: false,
-  },
+    overlap: false
+  }
 });
 
 // 뱃지 내용물 스타일
@@ -80,7 +80,7 @@ export const badgeContent = recipe({
     borderRadius: vars.borderRadius.full,
     zIndex: 1,
     transition: `transform ${vars.motion.duration.fast} ${vars.motion.easing.easeInOut}`,
-    whiteSpace: 'nowrap',
+    whiteSpace: 'nowrap'
   },
 
   variants: {
@@ -88,28 +88,28 @@ export const badgeContent = recipe({
     color: {
       primary: {
         backgroundColor: vars.color.primary,
-        color: vars.color.button.primary.text,
+        color: vars.color.button.primary.text
       },
       secondary: {
         backgroundColor: vars.color.secondary,
-        color: vars.color.text.primary,
+        color: vars.color.text.primary
       },
       error: {
         backgroundColor: vars.color.error,
-        color: vars.color.button.primary.text,
+        color: vars.color.button.primary.text
       },
       warning: {
         backgroundColor: vars.color.warning,
-        color: vars.color.text.primary,
+        color: vars.color.text.primary
       },
       success: {
         backgroundColor: vars.color.success,
-        color: vars.color.button.primary.text,
+        color: vars.color.button.primary.text
       },
       info: {
         backgroundColor: vars.color.info,
-        color: vars.color.button.primary.text,
-      },
+        color: vars.color.button.primary.text
+      }
     },
 
     // 뱃지 변형
@@ -117,33 +117,33 @@ export const badgeContent = recipe({
       standard: {},
       outline: {
         backgroundColor: 'transparent',
-        border: '1px solid currentColor',
+        border: '1px solid currentColor'
       },
       light: {
         // 각 색상의 옅은 버전
         selectors: {
           '&[data-color="primary"]': {
             backgroundColor: vars.color.tertiary,
-            color: vars.color.text.primary,
+            color: vars.color.text.primary
           },
           '&[data-color="error"]': {
             backgroundColor: 'rgba(239, 68, 68, 0.1)',
-            color: vars.color.error,
+            color: vars.color.error
           },
           '&[data-color="warning"]': {
             backgroundColor: 'rgba(245, 158, 11, 0.1)',
-            color: vars.color.warning,
+            color: vars.color.warning
           },
           '&[data-color="success"]': {
             backgroundColor: 'rgba(34, 197, 94, 0.1)',
-            color: vars.color.success,
+            color: vars.color.success
           },
           '&[data-color="info"]': {
             backgroundColor: 'rgba(59, 130, 246, 0.1)',
-            color: vars.color.info,
-          },
-        },
-      },
+            color: vars.color.info
+          }
+        }
+      }
     },
 
     // 뱃지 크기
@@ -152,20 +152,20 @@ export const badgeContent = recipe({
         minWidth: '16px',
         height: '16px',
         padding: '0 4px',
-        fontSize: '10px',
+        fontSize: '10px'
       },
       md: {
         minWidth: '20px',
         height: '20px',
         padding: '0 6px',
-        fontSize: '12px',
+        fontSize: '12px'
       },
       lg: {
         minWidth: '24px',
         height: '24px',
         padding: '0 8px',
-        fontSize: '14px',
-      },
+        fontSize: '14px'
+      }
     },
 
     // 점 모양 설정
@@ -174,21 +174,21 @@ export const badgeContent = recipe({
         minWidth: '8px',
         width: '8px',
         height: '8px',
-        padding: 0,
-      },
+        padding: 0
+      }
     },
 
     // 표시 여부
     visible: {
       true: {
         opacity: 1,
-        transform: 'scale(1)',
+        transform: 'scale(1)'
       },
       false: {
         opacity: 0,
-        transform: 'scale(0.75)',
-      },
-    },
+        transform: 'scale(0.75)'
+      }
+    }
   },
 
   compoundVariants: [
@@ -196,33 +196,33 @@ export const badgeContent = recipe({
     {
       variants: {
         dot: true,
-        size: 'sm',
+        size: 'sm'
       },
       style: {
         width: '6px',
-        height: '6px',
-      },
+        height: '6px'
+      }
     },
     {
       variants: {
         dot: true,
-        size: 'md',
+        size: 'md'
       },
       style: {
         width: '8px',
-        height: '8px',
-      },
+        height: '8px'
+      }
     },
     {
       variants: {
         dot: true,
-        size: 'lg',
+        size: 'lg'
       },
       style: {
         width: '10px',
-        height: '10px',
-      },
-    },
+        height: '10px'
+      }
+    }
   ],
 
   // 기본값
@@ -231,8 +231,8 @@ export const badgeContent = recipe({
     variant: 'standard',
     size: 'md',
     dot: false,
-    visible: true,
-  },
+    visible: true
+  }
 });
 
 // 점 스타일
@@ -240,7 +240,7 @@ export const dotStyle = style({
   minWidth: '8px',
   width: '8px',
   height: '8px',
-  borderRadius: '50%',
+  borderRadius: '50%'
 });
 
 // 타입 정의

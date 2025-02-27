@@ -6,7 +6,7 @@ import { vars } from '@bb/styles/theme.css';
 export const tagInputContainer = style({
   display: 'flex',
   flexDirection: 'column',
-  width: '100%',
+  width: '100%'
 });
 
 // 태그 입력 라벨 스타일
@@ -14,7 +14,7 @@ export const tagInputLabel = style({
   marginBottom: vars.spacing[1],
   fontSize: vars.typography.fontSize.sm,
   fontWeight: vars.typography.fontWeight.medium,
-  color: vars.color.text.secondary,
+  color: vars.color.text.secondary
 });
 
 // 입력 필드 래퍼 스타일
@@ -29,7 +29,7 @@ export const tagInputWrapper = recipe({
     transition: `
       border-color ${vars.motion.duration.fast} ${vars.motion.easing.easeInOut},
       box-shadow ${vars.motion.duration.fast} ${vars.motion.easing.easeInOut}
-    `,
+    `
   },
 
   variants: {
@@ -38,18 +38,18 @@ export const tagInputWrapper = recipe({
       sm: {
         minHeight: '32px',
         padding: `${vars.spacing[1]} ${vars.spacing[2]}`,
-        fontSize: vars.typography.fontSize.sm,
+        fontSize: vars.typography.fontSize.sm
       },
       md: {
         minHeight: '40px',
         padding: `${vars.spacing[2]} ${vars.spacing[3]}`,
-        fontSize: vars.typography.fontSize.md,
+        fontSize: vars.typography.fontSize.md
       },
       lg: {
         minHeight: '48px',
         padding: `${vars.spacing[3]} ${vars.spacing[4]}`,
-        fontSize: vars.typography.fontSize.lg,
-      },
+        fontSize: vars.typography.fontSize.lg
+      }
     },
 
     // 입력 필드 변형
@@ -58,15 +58,15 @@ export const tagInputWrapper = recipe({
         border: `1px solid ${vars.color.border.default}`,
         ':focus-within': {
           borderColor: vars.color.border.focus,
-          boxShadow: `0 0 0 1px ${vars.color.border.focus}`,
-        },
+          boxShadow: `0 0 0 1px ${vars.color.border.focus}`
+        }
       },
       filled: {
         border: 'none',
         backgroundColor: vars.color.background.subtle,
         ':focus-within': {
-          boxShadow: `0 0 0 1px ${vars.color.border.focus}`,
-        },
+          boxShadow: `0 0 0 1px ${vars.color.border.focus}`
+        }
       },
       underlined: {
         border: 'none',
@@ -75,9 +75,9 @@ export const tagInputWrapper = recipe({
         padding: `${vars.spacing[1]} 0`,
         ':focus-within': {
           borderColor: vars.color.border.focus,
-          boxShadow: `0 1px 0 0 ${vars.color.border.focus}`,
-        },
-      },
+          boxShadow: `0 1px 0 0 ${vars.color.border.focus}`
+        }
+      }
     },
 
     // 오류 상태
@@ -86,9 +86,9 @@ export const tagInputWrapper = recipe({
         borderColor: vars.color.error,
         ':focus-within': {
           borderColor: vars.color.error,
-          boxShadow: `0 0 0 1px ${vars.color.error}`,
-        },
-      },
+          boxShadow: `0 0 0 1px ${vars.color.error}`
+        }
+      }
     },
 
     // 비활성화 상태
@@ -96,9 +96,9 @@ export const tagInputWrapper = recipe({
       true: {
         backgroundColor: vars.color.background.subtle,
         opacity: 0.7,
-        cursor: 'not-allowed',
-      },
-    },
+        cursor: 'not-allowed'
+      }
+    }
   },
 
   // 복합 베리언트
@@ -107,21 +107,21 @@ export const tagInputWrapper = recipe({
     {
       variants: {
         error: true,
-        variant: 'outlined',
+        variant: 'outlined'
       },
       style: {
-        borderColor: vars.color.error,
-      },
+        borderColor: vars.color.error
+      }
     },
     {
       variants: {
         error: true,
-        variant: 'underlined',
+        variant: 'underlined'
       },
       style: {
-        borderBottomColor: vars.color.error,
-      },
-    },
+        borderBottomColor: vars.color.error
+      }
+    }
   ],
 
   // 기본값
@@ -129,8 +129,8 @@ export const tagInputWrapper = recipe({
     size: 'md',
     variant: 'outlined',
     error: false,
-    disabled: false,
-  },
+    disabled: false
+  }
 });
 
 // 태그 목록 스타일
@@ -139,7 +139,7 @@ export const tagList = style({
   flexWrap: 'wrap',
   alignItems: 'center',
   gap: vars.spacing[2],
-  width: '100%',
+  width: '100%'
 });
 
 // 입력 필드 스타일
@@ -156,27 +156,27 @@ export const tagInputField = style({
   padding: vars.spacing[1],
 
   '::placeholder': {
-    color: vars.color.text.hint,
+    color: vars.color.text.hint
   },
 
   ':disabled': {
     cursor: 'not-allowed',
-    color: vars.color.text.disabled,
-  },
+    color: vars.color.text.disabled
+  }
 });
 
 // 에러 메시지 스타일
 export const errorText = style({
   color: vars.color.error,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1],
+  marginTop: vars.spacing[1]
 });
 
 // 도움말 텍스트 스타일
 export const helperText = style({
   color: vars.color.text.hint,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1],
+  marginTop: vars.spacing[1]
 });
 
 // 타입 정의

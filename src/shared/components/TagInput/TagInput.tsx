@@ -55,49 +55,49 @@ export interface TagInputProps extends Omit<React.InputHTMLAttributes<HTMLInputE
  * - 해시태그나 키워드를 입력하고 관리하는 컴포넌트
  * - 엔터 키나 쉼표로 태그 추가 가능
  */
-export const TagInput = forwardRef<HTMLDivElement, TagInputProps>(
-  (props, ref) => {
-    const {
-      tags,
-      onChange,
-      label,
-      size = 'md',
-      variant = 'outlined',
-      delimiters = ['Enter', ',', ' '],
-      tagColor = 'primary',
-      maxTags,
-      errorText: errorTextProp,
-      helperText: helperTextProp,
-      validateTag,
-      allowDuplicates = false,
-      autoFocus = false,
-      placeholder = '태그 입력...',
-      disabled = false,
-      inputRef,
-      formatTag = (tag) => tag,
-      ...rest
-    } = props;
+export const TagInput = forwardRef<HTMLDivElement, TagInputProps>((props, ref) => {
+  const {
+    tags,
+    onChange,
+    label,
+    size = 'md',
+    variant = 'outlined',
+    delimiters = ['Enter', ',', ' '],
+    tagColor = 'primary',
+    maxTags,
+    errorText: errorTextProp,
+    helperText: helperTextProp,
+    validateTag,
+    allowDuplicates = false,
+    autoFocus = false,
+    placeholder = '태그 입력...',
+    disabled = false,
+    inputRef,
+    formatTag = (tag) => tag,
+    ...rest
+  } = props;
 
-    const [inputValue, setInputValue] = useState('');
-    const [error, setError] = useState<string | null>(null);
-    const internalInputRef = useRef<HTMLInputElement>(null);
-    const [className, style, restProps] = extractStyleProps(rest);
+  const [inputValue, setInputValue] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const internalInputRef = useRef<HTMLInputElement>(null);
+  const [className, style, restProps] = extractStyleProps(rest);
 
-    // 외부 ref와 내부 ref 통합
-    const handleRef = (element: HTMLInputElement | null) => {
-      internalInputRef.current = element;
+  // 외부 ref와 내부 ref 통합
+  const handleRef = (element: HTMLInputElement | null) => {
+    internalInputRef.current = element;
 
-      if (inputRef) {
-        if (typeof inputRef === 'function') {
-          inputRef(element);
-        } else {
-          (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = element;
-        }
+    if (inputRef) {
+      if (typeof inputRef === 'function') {
+        inputRef(element);
+      } else {
+        (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = element;
       }
-    };
+    }
+  };
 
-    // 태그 추가 함수
-    const addTag = useCallback((tag: string) => {
+  // 태그 추가 함수
+  const addTag = useCallback(
+    (tag: string) => {
       // 태그 값 정리 (공백 제거, 중복 # 제거)
       let newTag = tag.trim();
 
@@ -137,18 +137,24 @@ export const TagInput = forwardRef<HTMLDivElement, TagInputProps>(
       onChange([...tags, newTag]);
       setInputValue('');
       setError(null);
-    }, [tags, onChange, maxTags, allowDuplicates, validateTag, formatTag]);
+    },
+    [tags, onChange, maxTags, allowDuplicates, validateTag, formatTag]
+  );
 
-    // 태그 삭제 함수
-    const removeTag = useCallback((index: number) => {
+  // 태그 삭제 함수
+  const removeTag = useCallback(
+    (index: number) => {
       const newTags = [...tags];
       newTags.splice(index, 1);
       onChange(newTags);
       setError(null);
-    }, [tags, onChange]);
+    },
+    [tags, onChange]
+  );
 
-    // 키 입력 처리
-    const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+  // 키 입력 처리
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (delimiters.includes(e.key)) {
         e.preventDefault();
         addTag(inputValue);
@@ -156,10 +162,13 @@ export const TagInput = forwardRef<HTMLDivElement, TagInputProps>(
         // 입력값이 없을 때 백스페이스를 누르면 마지막 태그 삭제
         removeTag(tags.length - 1);
       }
-    }, [inputValue, addTag, delimiters, removeTag, tags.length]);
+    },
+    [inputValue, addTag, delimiters, removeTag, tags.length]
+  );
 
-    // 입력값 변경 처리
-    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  // 입력값 변경 처리
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
 
       // 쉼표 입력 시 태그 추가
@@ -169,74 +178,65 @@ export const TagInput = forwardRef<HTMLDivElement, TagInputProps>(
         setInputValue(value);
         setError(null);
       }
-    }, [addTag]);
+    },
+    [addTag]
+  );
 
-    // 포커스 처리
-    useEffect(() => {
-      if (autoFocus && internalInputRef.current) {
-        internalInputRef.current.focus();
-      }
-    }, [autoFocus]);
+  // 포커스 처리
+  useEffect(() => {
+    if (autoFocus && internalInputRef.current) {
+      internalInputRef.current.focus();
+    }
+  }, [autoFocus]);
 
-    // 오류 메시지 처리
-    const displayErrorText = errorTextProp || error;
+  // 오류 메시지 처리
+  const displayErrorText = errorTextProp || error;
 
-    return (
+  return (
+    <div ref={ref} className={mergeStyles(tagInputContainer, className)} style={style}>
+      {label && <label className={tagInputLabel}>{label}</label>}
+
       <div
-        ref={ref}
-        className={mergeStyles(tagInputContainer, className)}
-        style={style}
+        className={tagInputWrapper({
+          size,
+          variant,
+          error: !!displayErrorText,
+          disabled
+        })}
       >
-        {label && (
-          <label className={tagInputLabel}>{label}</label>
-        )}
-
-        <div
-          className={tagInputWrapper({
-            size,
-            variant,
-            error: !!displayErrorText,
-            disabled
-          })}
-        >
-          <div className={tagList}>
-            {tags.map((tag, index) => (
-              <Tag
-                key={`${tag}-${index}`}
-                label={tag.startsWith('#') ? tag : `#${tag}`}
-                color={tagColor as any}
-                variant="light"
-                size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md'}
-                closable={!disabled}
-                onClose={() => removeTag(index)}
-              />
-            ))}
-
-            <input
-              ref={handleRef}
-              type="text"
-              className={tagInputField}
-              value={inputValue}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              placeholder={tags.length === 0 ? placeholder : ''}
-              disabled={disabled || (maxTags !== undefined && tags.length >= maxTags)}
-              {...restProps}
+        <div className={tagList}>
+          {tags.map((tag, index) => (
+            <Tag
+              key={`${tag}-${index}`}
+              label={tag.startsWith('#') ? tag : `#${tag}`}
+              color={tagColor as any}
+              variant="light"
+              size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md'}
+              closable={!disabled}
+              onClose={() => removeTag(index)}
             />
-          </div>
+          ))}
+
+          <input
+            ref={handleRef}
+            type="text"
+            className={tagInputField}
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            placeholder={tags.length === 0 ? placeholder : ''}
+            disabled={disabled || (maxTags !== undefined && tags.length >= maxTags)}
+            {...restProps}
+          />
         </div>
-
-        {displayErrorText && (
-          <div className={errorText}>{displayErrorText}</div>
-        )}
-
-        {helperTextProp && !displayErrorText && (
-          <div className={helperText}>{helperTextProp}</div>
-        )}
       </div>
-    );
-  }
-);
+
+      {displayErrorText && <div className={errorText}>{displayErrorText}</div>}
+
+      {helperTextProp && !displayErrorText && <div className={helperText}>{helperTextProp}</div>}
+    </div>
+  );
+});
 
 TagInput.displayName = 'TagInput';
 
