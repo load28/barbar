@@ -1,4 +1,3 @@
-// src/shared/components/ui/Avatar/Avatar.css.ts
 import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { vars } from '@bb/styles/theme.css';

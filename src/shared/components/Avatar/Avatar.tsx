@@ -1,4 +1,3 @@
-// src/shared/components/ui/Avatar/Avatar.tsx
 import React, { forwardRef, useState } from 'react';
 import {
   avatar,

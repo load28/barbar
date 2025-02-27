@@ -1,4 +1,3 @@
-// src/shared/components/ui/Card/Card.tsx
 import React, { forwardRef, useState } from 'react';
 import {
   card,

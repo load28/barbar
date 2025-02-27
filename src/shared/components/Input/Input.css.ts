@@ -1,4 +1,3 @@
-// src/shared/components/ui/Input/Input.css.ts
 import { style, styleVariants } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { vars } from '@bb/styles/theme.css';

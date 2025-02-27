@@ -1,4 +1,3 @@
-// src/shared/components/ui/Button/Button.css.ts
 import { style, keyframes } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { vars } from '@bb/styles/theme.css';

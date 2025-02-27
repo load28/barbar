@@ -1,4 +1,3 @@
-// src/shared/components/ui/Input/Input.tsx
 import React, { forwardRef } from 'react';
 import {
   input,
