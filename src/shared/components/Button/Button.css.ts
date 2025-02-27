@@ -1,6 +1,6 @@
-import { style, keyframes } from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
-import { vars } from '@bb/styles/theme.css';
+import { vars } from '@bb-styles/theme.css';
 
 // 아이콘 컨테이너 기본 스타일
 export const iconContainer = style({

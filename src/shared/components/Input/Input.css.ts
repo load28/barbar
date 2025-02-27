@@ -1,6 +1,6 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
-import { vars } from '@bb/styles/theme.css';
+import { vars } from '@bb-styles/theme.css';
 
 // 기본 입력 필드 컨테이너 스타일
 const inputWrapperBase = style({

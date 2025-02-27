@@ -1,89 +1,208 @@
-import { createGlobalTheme, createTheme } from '@vanilla-extract/css';
+import { createTheme, createThemeContract } from '@vanilla-extract/css';
 
-// 기본 테마 변수 정의
-const themeVars = createGlobalTheme(':root', {
+// 테마 계약 생성 - 모든 테마가 충족해야 하는 계약
+const themeContract = createThemeContract({
   color: {
     // 브랜드 색상
-    primary: '#FF6B00', // 주 브랜드 색상 (오렌지)
-    secondary: '#FF9E5C', // 보조 브랜드 색상 (밝은 오렌지)
-    tertiary: '#FFD6B8', // 세 번째 브랜드 색상 (매우 옅은 오렌지)
+    primary: null,
+    secondary: null,
+    tertiary: null,
 
     // 상태 색상
-    success: '#22C55E', // 성공 상태 색상 (녹색)
-    warning: '#F59E0B', // 경고 상태 색상 (황색)
-    error: '#EF4444', // 오류 상태 색상 (적색)
-    info: '#3B82F6', // 정보 상태 색상 (청색)
+    success: null,
+    warning: null,
+    error: null,
+    info: null,
 
-    // 배경 색상 (라이트 모드)
+    // 배경 색상
     background: {
-      default: '#FFFFFF', // 기본 배경색 (흰색)
-      paper: '#F9FAFB', // 카드/종이 배경색 (매우 옅은 회색)
-      subtle: '#F3F4F6' // 미묘한 배경색 (옅은 회색)
+      default: null,
+      paper: null,
+      subtle: null
     },
 
-    // 텍스트 색상 (라이트 모드)
+    // 텍스트 색상
     text: {
-      primary: '#111827', // 기본 텍스트 색상 (거의 검정)
-      secondary: '#4B5563', // 보조 텍스트 색상 (어두운 회색)
-      disabled: '#9CA3AF', // 비활성화된 텍스트 색상 (중간 회색)
-      hint: '#6B7280' // 힌트 텍스트 색상 (회색)
+      primary: null,
+      secondary: null,
+      disabled: null,
+      hint: null
     },
 
-    // 테두리 색상 (라이트 모드)
+    // 테두리 색상
     border: {
-      default: '#E5E7EB', // 기본 테두리 색상 (밝은 회색)
-      focus: '#FF6B00', // 포커스 테두리 색상 (오렌지)
-      subtle: '#F3F4F6' // 미묘한 테두리 색상 (매우 옅은 회색)
+      default: null,
+      focus: null,
+      subtle: null
     },
 
-    // 버튼 색상 (라이트 모드)
+    // 버튼 색상
     button: {
       primary: {
-        background: '#FF6B00', // 기본 버튼 배경색 (오렌지)
-        text: '#FFFFFF', // 기본 버튼 텍스트 색상 (흰색)
-        hover: '#E95800', // 기본 버튼 호버 색상 (진한 오렌지)
-        active: '#D45000' // 기본 버튼 활성 색상 (더 진한 오렌지)
+        background: null,
+        text: null,
+        hover: null,
+        active: null
       },
       secondary: {
-        background: '#FFFFFF', // 보조 버튼 배경색 (흰색)
-        text: '#FF6B00', // 보조 버튼 텍스트 색상 (오렌지)
-        hover: '#FFF8F3', // 보조 버튼 호버 색상 (매우 옅은 오렌지)
-        active: '#FFE8D9' // 보조 버튼 활성 색상 (옅은 오렌지)
+        background: null,
+        text: null,
+        hover: null,
+        active: null
       },
       tertiary: {
-        background: 'transparent', // 세 번째 버튼 배경색 (투명)
-        text: '#4B5563', // 세 번째 버튼 텍스트 색상 (회색)
-        hover: '#F3F4F6', // 세 번째 버튼 호버 색상 (매우 옅은 회색)
-        active: '#E5E7EB' // 세 번째 버튼 활성 색상 (옅은 회색)
+        background: null,
+        text: null,
+        hover: null,
+        active: null
       }
+    },
+
+    shadow: {
+      none: null,
+      sm: null,
+      md: null,
+      lg: null,
+      xl: null
     }
   },
 
   typography: {
     fontFamily: {
-      base: "'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-      heading: "'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      base: null,
+      heading: null,
+      mono: null
     },
     fontSize: {
-      xs: '0.75rem', // 12px
-      sm: '0.875rem', // 14px
-      md: '1rem', // 16px
-      lg: '1.125rem', // 18px
-      xl: '1.25rem', // 20px
-      '2xl': '1.5rem' // 24px
+      xs: null,
+      sm: null,
+      md: null,
+      lg: null,
+      xl: null,
+      '2xl': null
     },
     fontWeight: {
-      normal: '400',
-      medium: '500',
-      bold: '700'
+      normal: null,
+      medium: null,
+      bold: null
     },
     lineHeight: {
-      tight: '1.25',
-      normal: '1.5',
-      loose: '1.75'
+      tight: null,
+      normal: null,
+      loose: null
     }
   },
 
+  spacing: {
+    '0': null,
+    '1': null,
+    '2': null,
+    '3': null,
+    '4': null,
+    '5': null,
+    '6': null,
+    '8': null,
+    '10': null,
+    '12': null,
+    '16': null,
+    '20': null,
+    '24': null,
+    '32': null,
+    '40': null,
+    '48': null,
+    '64': null,
+    '80': null,
+    '96': null,
+    '128': null
+  },
+
+  borderRadius: {
+    none: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    full: null
+  },
+
+  motion: {
+    duration: {
+      fast: null,
+      normal: null,
+      slow: null
+    },
+    easing: {
+      easeInOut: null,
+      easeOut: null,
+      easeIn: null,
+      linear: null
+    }
+  },
+
+  breakpoints: {
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null
+  },
+
+  zIndex: {
+    mobileStepper: null,
+    fab: null,
+    speedDial: null,
+    appBar: null,
+    drawer: null,
+    modal: null,
+    snackbar: null,
+    tooltip: null
+  }
+});
+
+// 공통 값 정의
+const commonValues = {
+  // 브랜드 색상
+  primary: '#FF6B00', // 주 브랜드 색상 (오렌지)
+  secondary: '#FF9E5C', // 보조 브랜드 색상 (밝은 오렌지)
+
+  // 상태 색상
+  success: '#22C55E', // 성공 상태 색상 (녹색)
+  warning: '#F59E0B', // 경고 상태 색상 (황색)
+  error: '#EF4444', // 오류 상태 색상 (적색)
+  info: '#3B82F6', // 정보 상태 색상 (청색)
+
+  // 버튼 공통 값
+  primaryButtonText: '#FFFFFF', // 기본 버튼 텍스트 색상 (흰색)
+  primaryButtonHover: '#E95800', // 기본 버튼 호버 색상 (진한 오렌지)
+  primaryButtonActive: '#D45000', // 기본 버튼 활성 색상 (더 진한 오렌지)
+
+  // 공통 타이포그래피
+  fontFamily: {
+    base: 'var(--font-geist-sans), "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    heading:
+      'var(--font-geist-sans), "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    mono: 'var(--font-geist-mono), SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+  },
+  fontSize: {
+    xs: '0.75rem', // 12px
+    sm: '0.875rem', // 14px
+    md: '1rem', // 16px
+    lg: '1.125rem', // 18px
+    xl: '1.25rem', // 20px
+    '2xl': '1.5rem' // 24px
+  },
+  fontWeight: {
+    normal: '400',
+    medium: '500',
+    bold: '700'
+  },
+  lineHeight: {
+    tight: '1.25',
+    normal: '1.5',
+    loose: '1.75'
+  },
+
+  // 공통 스페이싱
   spacing: {
     '0': '0',
     '1': '0.25rem', // 4px
@@ -107,6 +226,7 @@ const themeVars = createGlobalTheme(':root', {
     '128': '32rem' // 512px
   },
 
+  // 공통 테두리 반경
   borderRadius: {
     none: '0',
     sm: '0.125rem', // 2px
@@ -116,14 +236,7 @@ const themeVars = createGlobalTheme(':root', {
     full: '9999px'
   },
 
-  shadow: {
-    none: 'none',
-    sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-    md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-    lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-    xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
-  },
-
+  // 공통 모션
   motion: {
     duration: {
       fast: '150ms',
@@ -138,6 +251,7 @@ const themeVars = createGlobalTheme(':root', {
     }
   },
 
+  // 공통 브레이크포인트
   breakpoints: {
     xs: '0px',
     sm: '600px',
@@ -146,6 +260,7 @@ const themeVars = createGlobalTheme(':root', {
     xl: '1536px'
   },
 
+  // 공통 z-index
   zIndex: {
     mobileStepper: '1000',
     fab: '1050',
@@ -156,21 +271,102 @@ const themeVars = createGlobalTheme(':root', {
     snackbar: '1400',
     tooltip: '1500'
   }
+};
+
+// 라이트 테마 구현
+export const lightThemeClass = createTheme(themeContract, {
+  color: {
+    // 브랜드 색상
+    primary: commonValues.primary,
+    secondary: commonValues.secondary,
+    tertiary: '#FFD6B8', // 세 번째 브랜드 색상 (매우 옅은 오렌지)
+
+    // 상태 색상
+    success: commonValues.success,
+    warning: commonValues.warning,
+    error: commonValues.error,
+    info: commonValues.info,
+
+    // 배경 색상 (라이트 모드)
+    background: {
+      default: '#FFFFFF', // 기본 배경색 (흰색)
+      paper: '#F9FAFB', // 카드/종이 배경색 (매우 옅은 회색)
+      subtle: '#F3F4F6' // 미묘한 배경색 (옅은 회색)
+    },
+
+    // 텍스트 색상 (라이트 모드)
+    text: {
+      primary: '#111827', // 기본 텍스트 색상 (거의 검정)
+      secondary: '#4B5563', // 보조 텍스트 색상 (어두운 회색)
+      disabled: '#9CA3AF', // 비활성화된 텍스트 색상 (중간 회색)
+      hint: '#6B7280' // 힌트 텍스트 색상 (회색)
+    },
+
+    // 테두리 색상 (라이트 모드)
+    border: {
+      default: '#E5E7EB', // 기본 테두리 색상 (밝은 회색)
+      focus: commonValues.primary, // 포커스 테두리 색상 (오렌지)
+      subtle: '#F3F4F6' // 미묘한 테두리 색상 (매우 옅은 회색)
+    },
+
+    // 버튼 색상 (라이트 모드)
+    button: {
+      primary: {
+        background: commonValues.primary, // 기본 버튼 배경색 (오렌지)
+        text: commonValues.primaryButtonText, // 기본 버튼 텍스트 색상 (흰색)
+        hover: commonValues.primaryButtonHover, // 기본 버튼 호버 색상 (진한 오렌지)
+        active: commonValues.primaryButtonActive // 기본 버튼 활성 색상 (더 진한 오렌지)
+      },
+      secondary: {
+        background: '#FFFFFF', // 보조 버튼 배경색 (흰색)
+        text: commonValues.primary, // 보조 버튼 텍스트 색상 (오렌지)
+        hover: '#FFF8F3', // 보조 버튼 호버 색상 (매우 옅은 오렌지)
+        active: '#FFE8D9' // 보조 버튼 활성 색상 (옅은 오렌지)
+      },
+      tertiary: {
+        background: 'transparent', // 세 번째 버튼 배경색 (투명)
+        text: '#4B5563', // 세 번째 버튼 텍스트 색상 (회색)
+        hover: '#F3F4F6', // 세 번째 버튼 호버 색상 (매우 옅은 회색)
+        active: '#E5E7EB' // 세 번째 버튼 활성 색상 (옅은 회색)
+      }
+    },
+
+    shadow: {
+      none: 'none',
+      sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+    }
+  },
+
+  typography: {
+    fontFamily: commonValues.fontFamily,
+    fontSize: commonValues.fontSize,
+    fontWeight: commonValues.fontWeight,
+    lineHeight: commonValues.lineHeight
+  },
+
+  spacing: commonValues.spacing,
+  borderRadius: commonValues.borderRadius,
+  motion: commonValues.motion,
+  breakpoints: commonValues.breakpoints,
+  zIndex: commonValues.zIndex
 });
 
 // 다크 테마 정의
-export const darkThemeClass = createTheme({
+export const darkThemeClass = createTheme(themeContract, {
   color: {
     // 브랜드 색상
-    primary: themeVars.color.primary,
-    secondary: themeVars.color.secondary,
+    primary: commonValues.primary,
+    secondary: commonValues.secondary,
     tertiary: '#7C3A12', // 세 번째 브랜드 색상 (어두운 오렌지)
 
     // 상태 색상
-    success: themeVars.color.success,
-    warning: themeVars.color.warning,
-    error: themeVars.color.error,
-    info: themeVars.color.info,
+    success: commonValues.success,
+    warning: commonValues.warning,
+    error: commonValues.error,
+    info: commonValues.info,
 
     // 배경 색상 (다크 모드)
     background: {
@@ -190,21 +386,21 @@ export const darkThemeClass = createTheme({
     // 테두리 색상 (다크 모드)
     border: {
       default: '#374151', // 기본 테두리 색상 (진한 회색)
-      focus: themeVars.color.primary, // 포커스 테두리 색상 (오렌지)
+      focus: commonValues.primary, // 포커스 테두리 색상 (오렌지)
       subtle: '#1F2937' // 미묘한 테두리 색상 (진한 회색)
     },
 
     // 버튼 색상 (다크 모드)
     button: {
       primary: {
-        background: themeVars.color.primary, // 기본 버튼 배경색 (오렌지)
-        text: themeVars.color.button.primary.text, // 기본 버튼 텍스트 색상 (흰색)
-        hover: themeVars.color.button.primary.hover, // 기본 버튼 호버 색상 (진한 오렌지)
-        active: themeVars.color.button.primary.active // 기본 버튼 활성 색상 (더 진한 오렌지)
+        background: commonValues.primary, // 기본 버튼 배경색 (오렌지)
+        text: commonValues.primaryButtonText, // 기본 버튼 텍스트 색상 (흰색)
+        hover: commonValues.primaryButtonHover, // 기본 버튼 호버 색상 (진한 오렌지)
+        active: commonValues.primaryButtonActive // 기본 버튼 활성 색상 (더 진한 오렌지)
       },
       secondary: {
         background: '#374151', // 보조 버튼 배경색 (진한 회색)
-        text: themeVars.color.primary, // 보조 버튼 텍스트 색상 (오렌지)
+        text: commonValues.primary, // 보조 버튼 텍스트 색상 (오렌지)
         hover: '#4B5563', // 보조 버튼 호버 색상 (중간 회색)
         active: '#6B7280' // 보조 버튼 활성 색상 (회색)
       },
@@ -214,17 +410,30 @@ export const darkThemeClass = createTheme({
         hover: '#374151', // 세 번째 버튼 호버 색상 (진한 회색)
         active: '#4B5563' // 세 번째 버튼 활성 색상 (중간 회색)
       }
+    },
+
+    shadow: {
+      none: 'none',
+      sm: '0 1px 2px 0 rgba(0, 0, 0, 0.3)',
+      md: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)',
+      lg: '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)',
+      xl: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)'
     }
   },
 
-  shadow: {
-    none: 'none',
-    sm: '0 1px 2px 0 rgba(0, 0, 0, 0.3)',
-    md: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)',
-    lg: '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)',
-    xl: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)'
-  }
+  typography: {
+    fontFamily: commonValues.fontFamily,
+    fontSize: commonValues.fontSize,
+    fontWeight: commonValues.fontWeight,
+    lineHeight: commonValues.lineHeight
+  },
+
+  spacing: commonValues.spacing,
+  borderRadius: commonValues.borderRadius,
+  motion: commonValues.motion,
+  breakpoints: commonValues.breakpoints,
+  zIndex: commonValues.zIndex
 });
 
-// vars는 기본 테마 변수를 그대로 사용
-export const vars = themeVars;
+// 컴포넌트에서 사용할 때는 themeContract를 export하여 사용
+export const vars = themeContract;

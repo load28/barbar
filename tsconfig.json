@@ -23,8 +23,14 @@
       }
     ],
     "paths": {
-      "@bb/*": [
-        "./src/*"
+      "@bb-app/*": [
+        "./src/app/*"
+      ],
+      "@bb-shared/*": [
+        "./src/shared/*"
+      ],
+      "@bb-styles/*": [
+        "./src/styles/*"
       ]
     }
   },

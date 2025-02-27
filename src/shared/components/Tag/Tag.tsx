@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { tag, tagLabel, tagClose, tagIcon, TagVariant, TagSize, TagColor } from './Tag.css';
-import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
+import { tag, tagClose, TagColor, tagIcon, tagLabel, TagSize, TagVariant } from './Tag.css';
+import { extractStyleProps, mergeStyles } from '@bb-shared/utils/styling';
 
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   /** 태그 라벨 */

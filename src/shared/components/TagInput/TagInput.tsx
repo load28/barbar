@@ -1,16 +1,16 @@
-import React, { forwardRef, useState, useRef, useCallback, useEffect } from 'react';
+import React, { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 import {
+  errorText,
+  helperText,
   tagInputContainer,
-  tagInputWrapper,
   tagInputField,
-  tagList,
   tagInputLabel,
   TagInputSize,
   TagInputVariant,
-  helperText,
-  errorText
+  tagInputWrapper,
+  tagList
 } from './TagInput.css';
-import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
+import { extractStyleProps, mergeStyles } from '@bb-shared/utils/styling';
 import Tag from '../Tag';
 
 export interface TagInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'onChange'> {

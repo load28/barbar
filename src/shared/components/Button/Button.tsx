@@ -13,8 +13,8 @@ import {
   spinnerContainer,
   tertiaryButtonActive,
   tertiaryButtonHover
-} from '@bb/shared/components/Button/Button.css';
-import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
+} from '@bb-shared/components/Button/Button.css';
+import { extractStyleProps } from '@bb-shared/utils/styling';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** 버튼 스타일 종류 */
@@ -108,7 +108,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) =>
       ref={ref}
       type={type}
       disabled={isDisabled}
-      className={`${button({ variant, size, fullWidth, iconOnly, disabled: isDisabled })} ${hoverClass} ${activeClass} ${focusClass} ${className || ''}`}
+      className={`${button({
+        variant,
+        size,
+        fullWidth,
+        iconOnly,
+        disabled: isDisabled
+      })} ${hoverClass} ${activeClass} ${focusClass} ${className || ''}`}
       style={style}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {

@@ -1,24 +1,24 @@
 import React, { forwardRef, useState } from 'react';
 import {
-  ratingContainer,
-  ratingLabel,
-  ratingStarsContainer,
-  ratingStarBase,
-  ratingStarFilled,
-  ratingStarEmpty,
-  ratingTextContainer,
-  ratingValue,
-  ratingMax,
+  barStyle,
   ratingBarContainer,
   ratingBarFill,
-  RatingVariant,
-  RatingSize,
   ratingBarLabel,
   ratingBarValueText,
-  barStyle,
-  ratingIconContainer
+  ratingContainer,
+  ratingIconContainer,
+  ratingLabel,
+  ratingMax,
+  RatingSize,
+  ratingStarBase,
+  ratingStarEmpty,
+  ratingStarFilled,
+  ratingStarsContainer,
+  ratingTextContainer,
+  ratingValue,
+  RatingVariant
 } from './Rating.css';
-import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
+import { extractStyleProps, mergeStyles } from '@bb-shared/utils/styling';
 
 export interface RatingProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   /** 현재 평점 값 */

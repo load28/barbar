@@ -1,16 +1,16 @@
 import React, { forwardRef } from 'react';
 import {
-  input,
-  inputWrapper,
-  inputLabel,
   errorMessage,
   helperText,
+  input,
+  inputLabel,
+  InputSize,
+  inputWrapper,
   prefixIconContainer,
   suffixIconContainer,
-  ValidationState,
-  InputSize
+  ValidationState
 } from './Input.css';
-import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
+import { extractStyleProps, mergeStyles } from '@bb-shared/utils/styling';
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
   /** 입력 필드 라벨 */

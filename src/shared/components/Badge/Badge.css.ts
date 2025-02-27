@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
-import { vars } from '@bb/styles/theme.css';
+import { vars } from '@bb-styles/theme.css';
 
 // 뱃지 컨테이너 기본 스타일
 export const badge = recipe({

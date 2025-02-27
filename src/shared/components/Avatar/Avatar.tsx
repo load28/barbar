@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
-import { avatar, avatarImg, avatarFallback, avatarGroup, AvatarSize, AvatarShape } from './Avatar.css';
-import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
+import { avatar, avatarFallback, avatarGroup, avatarImg, AvatarShape, AvatarSize } from './Avatar.css';
+import { extractStyleProps, mergeStyles } from '@bb-shared/utils/styling';
 
 export type AvatarStatus = 'online' | 'offline' | 'busy' | 'away';
 

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { badge, badgeContent, BadgeVariant, BadgeColor, BadgeSize, BadgePlacement } from './Badge.css';
-import { extractStyleProps, mergeStyles } from '@bb/shared/utils/styling';
+import { badge, BadgeColor, badgeContent, BadgePlacement, BadgeSize, BadgeVariant } from './Badge.css';
+import { extractStyleProps, mergeStyles } from '@bb-shared/utils/styling';
 
 export interface BadgeProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'content'> {
   /** 뱃지 내용 (숫자나 텍스트) */
