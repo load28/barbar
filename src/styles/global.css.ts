@@ -1,6 +1,5 @@
-// src/styles/global.css.ts
 import { globalStyle } from '@vanilla-extract/css';
-import { vars } from './theme.css';
+import { vars } from '@bb/styles/theme.css';
 
 // 기본 리셋 및 기본 스타일 설정
 globalStyle('*, *::before, *::after', {
