@@ -1,4 +1,5 @@
 import { createTheme, createThemeContract } from '@vanilla-extract/css';
+import { orange, gray, state } from './colors.css';
 
 // 테마 계약 생성 - 모든 테마가 충족해야 하는 계약
 const themeContract = createThemeContract({
@@ -94,26 +95,26 @@ const themeContract = createThemeContract({
   },
 
   spacing: {
-    '0': null,
-    '1': null,
-    '2': null,
-    '3': null,
-    '4': null,
-    '5': null,
-    '6': null,
-    '8': null,
-    '10': null,
-    '12': null,
-    '16': null,
-    '20': null,
-    '24': null,
-    '32': null,
-    '40': null,
-    '48': null,
-    '64': null,
-    '80': null,
-    '96': null,
-    '128': null
+    'spacing0': null,
+    'spacing1': null,
+    'spacing2': null,
+    'spacing3': null,
+    'spacing4': null,
+    'spacing5': null,
+    'spacing6': null,
+    'spacing8': null,
+    'spacing10': null,
+    'spacing12': null,
+    'spacing16': null,
+    'spacing20': null,
+    'spacing24': null,
+    'spacing32': null,
+    'spacing40': null,
+    'spacing48': null,
+    'spacing64': null,
+    'spacing80': null,
+    'spacing96': null,
+    'spacing128': null
   },
 
   borderRadius: {
@@ -161,21 +162,6 @@ const themeContract = createThemeContract({
 
 // 공통 값 정의
 const commonValues = {
-  // 브랜드 색상
-  primary: '#FF6B00', // 주 브랜드 색상 (오렌지)
-  secondary: '#FF9E5C', // 보조 브랜드 색상 (밝은 오렌지)
-
-  // 상태 색상
-  success: '#22C55E', // 성공 상태 색상 (녹색)
-  warning: '#F59E0B', // 경고 상태 색상 (황색)
-  error: '#EF4444', // 오류 상태 색상 (적색)
-  info: '#3B82F6', // 정보 상태 색상 (청색)
-
-  // 버튼 공통 값
-  primaryButtonText: '#FFFFFF', // 기본 버튼 텍스트 색상 (흰색)
-  primaryButtonHover: '#E95800', // 기본 버튼 호버 색상 (진한 오렌지)
-  primaryButtonActive: '#D45000', // 기본 버튼 활성 색상 (더 진한 오렌지)
-
   // 공통 타이포그래피
   fontFamily: {
     base: 'var(--font-geist-sans), "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
@@ -204,26 +190,26 @@ const commonValues = {
 
   // 공통 스페이싱
   spacing: {
-    '0': '0',
-    '1': '0.25rem', // 4px
-    '2': '0.5rem', // 8px
-    '3': '0.75rem', // 12px
-    '4': '1rem', // 16px
-    '5': '1.25rem', // 20px
-    '6': '1.5rem', // 24px
-    '8': '2rem', // 32px
-    '10': '2.5rem', // 40px
-    '12': '3rem', // 48px
-    '16': '4rem', // 64px
-    '20': '5rem', // 80px
-    '24': '6rem', // 96px
-    '32': '8rem', // 128px
-    '40': '10rem', // 160px
-    '48': '12rem', // 192px
-    '64': '16rem', // 256px
-    '80': '20rem', // 320px
-    '96': '24rem', // 384px
-    '128': '32rem' // 512px
+    'spacing0': '0',
+    'spacing1': '0.25rem', // 4px
+    'spacing2': '0.5rem', // 8px
+    'spacing3': '0.75rem', // 12px
+    'spacing4': '1rem', // 16px
+    'spacing5': '1.25rem', // 20px
+    'spacing6': '1.5rem', // 24px
+    'spacing8': '2rem', // 32px
+    'spacing10': '2.5rem', // 40px
+    'spacing12': '3rem', // 48px
+    'spacing16': '4rem', // 64px
+    'spacing20': '5rem', // 80px
+    'spacing24': '6rem', // 96px
+    'spacing32': '8rem', // 128px
+    'spacing40': '10rem', // 160px
+    'spacing48': '12rem', // 192px
+    'spacing64': '16rem', // 256px
+    'spacing80': '20rem', // 320px
+    'spacing96': '24rem', // 384px
+    'spacing128': '32rem' // 512px
   },
 
   // 공통 테두리 반경
@@ -277,57 +263,57 @@ const commonValues = {
 export const lightThemeClass = createTheme(themeContract, {
   color: {
     // 브랜드 색상
-    primary: commonValues.primary,
-    secondary: commonValues.secondary,
-    tertiary: '#FFD6B8', // 세 번째 브랜드 색상 (매우 옅은 오렌지)
+    primary: orange[600],
+    secondary: orange[500],
+    tertiary: orange[200],
 
     // 상태 색상
-    success: commonValues.success,
-    warning: commonValues.warning,
-    error: commonValues.error,
-    info: commonValues.info,
+    success: state.success.base,
+    warning: state.warning.base,
+    error: state.error.base,
+    info: state.info.base,
 
     // 배경 색상 (라이트 모드)
     background: {
-      default: '#FFFFFF', // 기본 배경색 (흰색)
-      paper: '#F9FAFB', // 카드/종이 배경색 (매우 옅은 회색)
-      subtle: '#F3F4F6' // 미묘한 배경색 (옅은 회색)
+      default: gray[0],
+      paper: gray[50],
+      subtle: gray[100]
     },
 
     // 텍스트 색상 (라이트 모드)
     text: {
-      primary: '#111827', // 기본 텍스트 색상 (거의 검정)
-      secondary: '#4B5563', // 보조 텍스트 색상 (어두운 회색)
-      disabled: '#9CA3AF', // 비활성화된 텍스트 색상 (중간 회색)
-      hint: '#6B7280' // 힌트 텍스트 색상 (회색)
+      primary: gray[900],
+      secondary: gray[600],
+      disabled: gray[400],
+      hint: gray[500]
     },
 
     // 테두리 색상 (라이트 모드)
     border: {
-      default: '#E5E7EB', // 기본 테두리 색상 (밝은 회색)
-      focus: commonValues.primary, // 포커스 테두리 색상 (오렌지)
-      subtle: '#F3F4F6' // 미묘한 테두리 색상 (매우 옅은 회색)
+      default: gray[200],
+      focus: orange[600],
+      subtle: gray[100]
     },
 
     // 버튼 색상 (라이트 모드)
     button: {
       primary: {
-        background: commonValues.primary, // 기본 버튼 배경색 (오렌지)
-        text: commonValues.primaryButtonText, // 기본 버튼 텍스트 색상 (흰색)
-        hover: commonValues.primaryButtonHover, // 기본 버튼 호버 색상 (진한 오렌지)
-        active: commonValues.primaryButtonActive // 기본 버튼 활성 색상 (더 진한 오렌지)
+        background: orange[600],
+        text: gray[0],
+        hover: orange[700],
+        active: orange[800]
       },
       secondary: {
-        background: '#FFFFFF', // 보조 버튼 배경색 (흰색)
-        text: commonValues.primary, // 보조 버튼 텍스트 색상 (오렌지)
-        hover: '#FFF8F3', // 보조 버튼 호버 색상 (매우 옅은 오렌지)
-        active: '#FFE8D9' // 보조 버튼 활성 색상 (옅은 오렌지)
+        background: gray[0],
+        text: orange[600],
+        hover: orange[50],
+        active: orange[100]
       },
       tertiary: {
-        background: 'transparent', // 세 번째 버튼 배경색 (투명)
-        text: '#4B5563', // 세 번째 버튼 텍스트 색상 (회색)
-        hover: '#F3F4F6', // 세 번째 버튼 호버 색상 (매우 옅은 회색)
-        active: '#E5E7EB' // 세 번째 버튼 활성 색상 (옅은 회색)
+        background: 'transparent',
+        text: gray[600],
+        hover: gray[100],
+        active: gray[200]
       }
     },
 
@@ -358,57 +344,57 @@ export const lightThemeClass = createTheme(themeContract, {
 export const darkThemeClass = createTheme(themeContract, {
   color: {
     // 브랜드 색상
-    primary: commonValues.primary,
-    secondary: commonValues.secondary,
-    tertiary: '#7C3A12', // 세 번째 브랜드 색상 (어두운 오렌지)
+    primary: orange[600],
+    secondary: orange[500],
+    tertiary: orange[900],
 
     // 상태 색상
-    success: commonValues.success,
-    warning: commonValues.warning,
-    error: commonValues.error,
-    info: commonValues.info,
+    success: state.success.base,
+    warning: state.warning.base,
+    error: state.error.base,
+    info: state.info.base,
 
     // 배경 색상 (다크 모드)
     background: {
-      default: '#111827', // 기본 배경색 (어두운 회색)
-      paper: '#1F2937', // 카드/종이 배경색 (진한 회색)
-      subtle: '#374151' // 미묘한 배경색 (중간 회색)
+      default: gray[900],
+      paper: gray[800],
+      subtle: gray[700]
     },
 
     // 텍스트 색상 (다크 모드)
     text: {
-      primary: '#F9FAFB', // 기본 텍스트 색상 (거의 흰색)
-      secondary: '#D1D5DB', // 보조 텍스트 색상 (밝은 회색)
-      disabled: '#6B7280', // 비활성화된 텍스트 색상 (중간 회색)
-      hint: '#9CA3AF' // 힌트 텍스트 색상 (회색)
+      primary: gray[50],
+      secondary: gray[300],
+      disabled: gray[500],
+      hint: gray[400]
     },
 
     // 테두리 색상 (다크 모드)
     border: {
-      default: '#374151', // 기본 테두리 색상 (진한 회색)
-      focus: commonValues.primary, // 포커스 테두리 색상 (오렌지)
-      subtle: '#1F2937' // 미묘한 테두리 색상 (진한 회색)
+      default: gray[700],
+      focus: orange[600],
+      subtle: gray[800]
     },
 
     // 버튼 색상 (다크 모드)
     button: {
       primary: {
-        background: commonValues.primary, // 기본 버튼 배경색 (오렌지)
-        text: commonValues.primaryButtonText, // 기본 버튼 텍스트 색상 (흰색)
-        hover: commonValues.primaryButtonHover, // 기본 버튼 호버 색상 (진한 오렌지)
-        active: commonValues.primaryButtonActive // 기본 버튼 활성 색상 (더 진한 오렌지)
+        background: orange[600],
+        text: gray[0],
+        hover: orange[700],
+        active: orange[800]
       },
       secondary: {
-        background: '#374151', // 보조 버튼 배경색 (진한 회색)
-        text: commonValues.primary, // 보조 버튼 텍스트 색상 (오렌지)
-        hover: '#4B5563', // 보조 버튼 호버 색상 (중간 회색)
-        active: '#6B7280' // 보조 버튼 활성 색상 (회색)
+        background: gray[700],
+        text: orange[600],
+        hover: gray[600],
+        active: gray[500]
       },
       tertiary: {
-        background: 'transparent', // 세 번째 버튼 배경색 (투명)
-        text: '#D1D5DB', // 세 번째 버튼 텍스트 색상 (밝은 회색)
-        hover: '#374151', // 세 번째 버튼 호버 색상 (진한 회색)
-        active: '#4B5563' // 세 번째 버튼 활성 색상 (중간 회색)
+        background: 'transparent',
+        text: gray[300],
+        hover: gray[700],
+        active: gray[600]
       }
     },
 

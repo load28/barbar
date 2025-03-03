@@ -21,7 +21,7 @@ globalStyle('body', {
 
 globalStyle('h1, h2, h3, h4, h5, h6', {
   fontFamily: vars.typography.fontFamily.heading,
-  margin: `${vars.spacing[4]} 0 ${vars.spacing[2]} 0`,
+  margin: 0,
   fontWeight: vars.typography.fontWeight.bold,
   lineHeight: vars.typography.lineHeight.tight,
   color: vars.color.text.primary
@@ -40,7 +40,7 @@ globalStyle('h3', {
 });
 
 globalStyle('p', {
-  margin: `${vars.spacing[2]} 0`
+  margin: `${vars.spacing.spacing2} 0`
 });
 
 // 링크 스타일

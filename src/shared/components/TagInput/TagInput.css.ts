@@ -11,7 +11,7 @@ export const tagInputContainer = style({
 
 // 태그 입력 라벨 스타일
 export const tagInputLabel = style({
-  marginBottom: vars.spacing[1],
+  marginBottom: vars.spacing.spacing1,
   fontSize: vars.typography.fontSize.sm,
   fontWeight: vars.typography.fontWeight.medium,
   color: vars.color.text.secondary
@@ -37,17 +37,17 @@ export const tagInputWrapper = recipe({
     size: {
       sm: {
         minHeight: '32px',
-        padding: `${vars.spacing[1]} ${vars.spacing[2]}`,
+        padding: `${vars.spacing.spacing1} ${vars.spacing.spacing2}`,
         fontSize: vars.typography.fontSize.sm
       },
       md: {
         minHeight: '40px',
-        padding: `${vars.spacing[2]} ${vars.spacing[3]}`,
+        padding: `${vars.spacing.spacing2} ${vars.spacing.spacing3}`,
         fontSize: vars.typography.fontSize.md
       },
       lg: {
         minHeight: '48px',
-        padding: `${vars.spacing[3]} ${vars.spacing[4]}`,
+        padding: `${vars.spacing.spacing3} ${vars.spacing.spacing4}`,
         fontSize: vars.typography.fontSize.lg
       }
     },
@@ -72,7 +72,7 @@ export const tagInputWrapper = recipe({
         border: 'none',
         borderBottom: `1px solid ${vars.color.border.default}`,
         borderRadius: 0,
-        padding: `${vars.spacing[1]} 0`,
+        padding: `${vars.spacing.spacing1} 0`,
         ':focus-within': {
           borderColor: vars.color.border.focus,
           boxShadow: `0 1px 0 0 ${vars.color.border.focus}`
@@ -138,7 +138,7 @@ export const tagList = style({
   display: 'flex',
   flexWrap: 'wrap',
   alignItems: 'center',
-  gap: vars.spacing[2],
+  gap: vars.spacing.spacing2,
   width: '100%'
 });
 
@@ -153,7 +153,7 @@ export const tagInputField = style({
   fontFamily: 'inherit',
   color: vars.color.text.primary,
   margin: 0,
-  padding: vars.spacing[1],
+  padding: vars.spacing.spacing1,
 
   '::placeholder': {
     color: vars.color.text.hint
@@ -169,14 +169,14 @@ export const tagInputField = style({
 export const errorText = style({
   color: vars.color.error,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1]
+  marginTop: vars.spacing.spacing1
 });
 
 // 도움말 텍스트 스타일
 export const helperText = style({
   color: vars.color.text.hint,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1]
+  marginTop: vars.spacing.spacing1
 });
 
 // 타입 정의

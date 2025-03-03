@@ -11,7 +11,7 @@ const inputWrapperBase = style({
 // 기본 라벨 스타일
 export const inputLabel = style({
   display: 'block',
-  marginBottom: vars.spacing[1],
+  marginBottom: vars.spacing.spacing1,
   fontSize: vars.typography.fontSize.sm,
   fontWeight: vars.typography.fontWeight.medium,
   color: vars.color.text.secondary
@@ -59,14 +59,14 @@ export type InputSize = 'sm' | 'md' | 'lg';
 export const errorMessage = style({
   color: vars.color.error,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1]
+  marginTop: vars.spacing.spacing1
 });
 
 // 도움말 텍스트 스타일
 export const helperText = style({
   color: vars.color.text.hint,
   fontSize: vars.typography.fontSize.sm,
-  marginTop: vars.spacing[1]
+  marginTop: vars.spacing.spacing1
 });
 
 // 접두/접미 아이콘 컨테이너 기본 스타일
@@ -85,7 +85,7 @@ const iconBaseStyle = style({
 export const prefixIconContainer = style([
   iconBaseStyle,
   {
-    left: vars.spacing[3]
+    left: vars.spacing.spacing3
   }
 ]);
 
@@ -93,7 +93,7 @@ export const prefixIconContainer = style([
 export const suffixIconContainer = style([
   iconBaseStyle,
   {
-    right: vars.spacing[3]
+    right: vars.spacing.spacing3
   }
 ]);
 
@@ -105,18 +105,18 @@ export const input = recipe({
     // 입력 필드 크기
     size: {
       sm: {
-        height: vars.spacing[8],
-        padding: `0 ${vars.spacing[3]}`,
+        height: vars.spacing.spacing8,
+        padding: `0 ${vars.spacing.spacing3}`,
         fontSize: vars.typography.fontSize.sm
       },
       md: {
-        height: vars.spacing[10],
-        padding: `0 ${vars.spacing[4]}`,
+        height: vars.spacing.spacing10,
+        padding: `0 ${vars.spacing.spacing4}`,
         fontSize: vars.typography.fontSize.md
       },
       lg: {
-        height: vars.spacing[12],
-        padding: `0 ${vars.spacing[5]}`,
+        height: vars.spacing.spacing12,
+        padding: `0 ${vars.spacing.spacing5}`,
         fontSize: vars.typography.fontSize.lg
       }
     },
@@ -179,7 +179,7 @@ export const input = recipe({
         size: 'sm'
       },
       style: {
-        paddingLeft: vars.spacing[6]
+        paddingLeft: vars.spacing.spacing6
       }
     },
     {
@@ -188,7 +188,7 @@ export const input = recipe({
         size: 'md'
       },
       style: {
-        paddingLeft: vars.spacing[8]
+        paddingLeft: vars.spacing.spacing8
       }
     },
     {
@@ -197,7 +197,7 @@ export const input = recipe({
         size: 'lg'
       },
       style: {
-        paddingLeft: vars.spacing[10]
+        paddingLeft: vars.spacing.spacing10
       }
     },
 
@@ -208,7 +208,7 @@ export const input = recipe({
         size: 'sm'
       },
       style: {
-        paddingRight: vars.spacing[6]
+        paddingRight: vars.spacing.spacing6
       }
     },
     {
@@ -217,7 +217,7 @@ export const input = recipe({
         size: 'md'
       },
       style: {
-        paddingRight: vars.spacing[8]
+        paddingRight: vars.spacing.spacing8
       }
     },
     {
@@ -226,7 +226,7 @@ export const input = recipe({
         size: 'lg'
       },
       style: {
-        paddingRight: vars.spacing[10]
+        paddingRight: vars.spacing.spacing10
       }
     }
   ],

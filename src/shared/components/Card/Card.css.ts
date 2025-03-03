@@ -17,7 +17,7 @@ export const hoverableCard = style({
 
 // 카드 헤더 스타일
 export const cardHeader = style({
-  padding: `${vars.spacing[4]} ${vars.spacing[4]} ${vars.spacing[2]}`,
+  padding: `${vars.spacing.spacing4} ${vars.spacing.spacing4} ${vars.spacing.spacing2}`,
   borderBottom: `1px solid ${vars.color.border.subtle}`
 });
 
@@ -36,7 +36,7 @@ export const cardHeaderContent = style({
 
 // 카드 헤더 아이콘 컨테이너
 export const cardHeaderIconContainer = style({
-  marginRight: vars.spacing[3]
+  marginRight: vars.spacing.spacing3
 });
 
 // 카드 헤더 액션 컨테이너
@@ -56,13 +56,13 @@ export const cardTitle = style({
 export const cardSubtitle = style({
   fontSize: vars.typography.fontSize.sm,
   color: vars.color.text.secondary,
-  margin: `${vars.spacing[1]} 0 0`,
+  margin: `${vars.spacing.spacing1} 0 0`,
   lineHeight: vars.typography.lineHeight.normal
 });
 
 // 카드 콘텐츠 스타일
 export const cardContent = style({
-  padding: vars.spacing[4]
+  padding: vars.spacing.spacing4
 });
 
 // 패딩 없는 컨텐츠 스타일
@@ -72,12 +72,12 @@ export const noPaddingContent = style({
 
 // 카드 푸터 스타일
 export const cardFooter = style({
-  padding: `${vars.spacing[2]} ${vars.spacing[4]} ${vars.spacing[4]}`,
+  padding: `${vars.spacing.spacing2} ${vars.spacing.spacing4} ${vars.spacing.spacing4}`,
   borderTop: `1px solid ${vars.color.border.subtle}`,
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'center',
-  gap: vars.spacing[2]
+  gap: vars.spacing.spacing2
 });
 
 // 카드 이미지 스타일
@@ -94,7 +94,7 @@ export type CardPadding = 'none' | 'sm' | 'md' | 'lg';
 
 // 카드 그림자 스타일 (호버 시)
 export const cardShadowHover = style({
-  boxShadow: vars.shadow.lg
+  boxShadow: vars.color.shadow.lg
 });
 
 // 카드 레시피
@@ -105,7 +105,7 @@ export const card = recipe({
     // 카드 스타일 종류
     variant: {
       elevated: {
-        boxShadow: vars.shadow.md,
+        boxShadow: vars.color.shadow.md,
         border: 'none'
       },
       outlined: {
@@ -135,13 +135,13 @@ export const card = recipe({
     padding: {
       none: {},
       sm: {
-        padding: vars.spacing[2]
+        padding: vars.spacing.spacing2
       },
       md: {
-        padding: vars.spacing[4]
+        padding: vars.spacing.spacing4
       },
       lg: {
-        padding: vars.spacing[6]
+        padding: vars.spacing.spacing6
       }
     }
   },

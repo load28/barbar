@@ -7,7 +7,7 @@ export const loginContainer = style({
   alignItems: 'center',
   justifyContent: 'center',
   minHeight: '100vh',
-  padding: vars.spacing[4],
+  padding: vars.spacing.spacing4,
   backgroundColor: vars.color.background.default
 });
 
@@ -21,14 +21,13 @@ export const logo = style({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: '2rem',
-  marginBottom: vars.spacing[6]
+  marginBottom: vars.spacing.spacing6
 });
 
 export const appTitle = style({
   fontSize: vars.typography.fontSize['2xl'],
   fontWeight: vars.typography.fontWeight.bold,
-  margin: 0,
-  marginBottom: vars.spacing[2],
+  marginBottom: vars.spacing.spacing2,
   color: vars.color.text.primary
 });
 
@@ -36,7 +35,7 @@ export const appDescription = style({
   fontSize: vars.typography.fontSize.md,
   textAlign: 'center',
   color: vars.color.text.secondary,
-  marginBottom: vars.spacing[8],
+  marginBottom: vars.spacing.spacing8,
   maxWidth: '280px'
 });
 
@@ -54,7 +53,7 @@ export const kakaoButton = style({
   borderRadius: vars.borderRadius.xl,
   border: 'none',
   cursor: 'pointer',
-  marginBottom: vars.spacing[3],
+  marginBottom: vars.spacing.spacing4,
   transition: `opacity ${vars.motion.duration.fast} ${vars.motion.easing.easeInOut}`,
 
   ':hover': {
@@ -70,6 +69,6 @@ export const termsText = style({
   fontSize: vars.typography.fontSize.xs,
   color: vars.color.text.hint,
   textAlign: 'center',
-  marginTop: vars.spacing[8],
+  marginTop: vars.spacing.spacing8,
   maxWidth: '280px'
 });

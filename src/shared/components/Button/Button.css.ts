@@ -13,7 +13,7 @@ export const iconContainer = style({
 export const leftIconContainer = style([
   iconContainer,
   {
-    marginRight: vars.spacing[2]
+    marginRight: vars.spacing.spacing2
   }
 ]);
 
@@ -21,7 +21,7 @@ export const leftIconContainer = style([
 export const rightIconContainer = style([
   iconContainer,
   {
-    marginLeft: vars.spacing[2]
+    marginLeft: vars.spacing.spacing2
   }
 ]);
 
@@ -35,7 +35,7 @@ const spin = keyframes({
 export const spinnerContainer = style([
   iconContainer,
   {
-    marginRight: vars.spacing[2],
+    marginRight: vars.spacing.spacing2,
     animation: `${spin} 1s linear infinite`
   }
 ]);
@@ -135,28 +135,28 @@ export const button = recipe({
     size: {
       xs: {
         fontSize: vars.typography.fontSize.xs,
-        padding: `${vars.spacing[1]} ${vars.spacing[2]}`,
-        height: vars.spacing[6]
+        padding: `${vars.spacing.spacing1} ${vars.spacing.spacing2}`,
+        height: vars.spacing.spacing6
       },
       sm: {
         fontSize: vars.typography.fontSize.sm,
-        padding: `${vars.spacing[1]} ${vars.spacing[3]}`,
-        height: vars.spacing[8]
+        padding: `${vars.spacing.spacing1} ${vars.spacing.spacing3}`,
+        height: vars.spacing.spacing8
       },
       md: {
         fontSize: vars.typography.fontSize.md,
-        padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
-        height: vars.spacing[10]
+        padding: `${vars.spacing.spacing2} ${vars.spacing.spacing4}`,
+        height: vars.spacing.spacing10
       },
       lg: {
         fontSize: vars.typography.fontSize.lg,
-        padding: `${vars.spacing[2]} ${vars.spacing[5]}`,
-        height: vars.spacing[12]
+        padding: `${vars.spacing.spacing2} ${vars.spacing.spacing5}`,
+        height: vars.spacing.spacing12
       },
       xl: {
         fontSize: vars.typography.fontSize.xl,
-        padding: `${vars.spacing[3]} ${vars.spacing[6]}`,
-        height: vars.spacing[16]
+        padding: `${vars.spacing.spacing3} ${vars.spacing.spacing6}`,
+        height: vars.spacing.spacing16
       }
     },
 
@@ -190,7 +190,7 @@ export const button = recipe({
         size: 'xs'
       },
       style: {
-        width: vars.spacing[6]
+        width: vars.spacing.spacing6
       }
     },
     {
@@ -199,7 +199,7 @@ export const button = recipe({
         size: 'sm'
       },
       style: {
-        width: vars.spacing[8]
+        width: vars.spacing.spacing8
       }
     },
     {
@@ -208,7 +208,7 @@ export const button = recipe({
         size: 'md'
       },
       style: {
-        width: vars.spacing[10]
+        width: vars.spacing.spacing10
       }
     },
     {
@@ -217,7 +217,7 @@ export const button = recipe({
         size: 'lg'
       },
       style: {
-        width: vars.spacing[12]
+        width: vars.spacing.spacing12
       }
     },
     {
@@ -226,7 +226,7 @@ export const button = recipe({
         size: 'xl'
       },
       style: {
-        width: vars.spacing[16]
+        width: vars.spacing.spacing16
       }
     }
   ],

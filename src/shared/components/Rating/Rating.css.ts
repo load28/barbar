@@ -45,7 +45,7 @@ export const ratingContainer = recipe({
 export const ratingLabel = style({
   fontSize: '0.85em',
   color: vars.color.text.secondary,
-  marginBottom: vars.spacing[1],
+  marginBottom: vars.spacing.spacing1,
   fontWeight: vars.typography.fontWeight.medium
 });
 
@@ -53,7 +53,7 @@ export const ratingLabel = style({
 export const ratingStarsContainer = style({
   display: 'flex',
   alignItems: 'center',
-  gap: vars.spacing[1]
+  gap: vars.spacing.spacing1
 });
 
 // 별 기본 스타일
@@ -80,7 +80,7 @@ export const ratingStarEmpty = style({
 export const ratingTextContainer = style({
   display: 'flex',
   alignItems: 'baseline',
-  gap: vars.spacing[1]
+  gap: vars.spacing.spacing1
 });
 
 // 평점 값 스타일
@@ -89,7 +89,7 @@ export const ratingValue = style({
   color: 'var(--rating-color, ' + vars.color.warning + ')',
   display: 'flex',
   alignItems: 'center',
-  gap: vars.spacing[1]
+  gap: vars.spacing.spacing1
 });
 
 // 최대 평점 스타일
@@ -103,7 +103,7 @@ export const ratingBarContainer = style({
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.spacing[1]
+  gap: vars.spacing.spacing1
 });
 
 // 바 스타일
@@ -135,7 +135,7 @@ export const ratingBarLabel = style({
 
 // 바 값 텍스트 스타일
 export const ratingBarValueText = style({
-  marginTop: vars.spacing[1],
+  marginTop: vars.spacing.spacing1,
   fontSize: '0.8em',
   color: vars.color.text.secondary,
   textAlign: 'right'

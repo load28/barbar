@@ -52,33 +52,33 @@ export const avatar = recipe({
     // 아바타 크기
     size: {
       xs: {
-        width: vars.spacing[6],
-        height: vars.spacing[6],
+        width: vars.spacing.spacing6,
+        height: vars.spacing.spacing6,
         fontSize: vars.typography.fontSize.xs
       },
       sm: {
-        width: vars.spacing[8],
-        height: vars.spacing[8],
+        width: vars.spacing.spacing8,
+        height: vars.spacing.spacing8,
         fontSize: vars.typography.fontSize.sm
       },
       md: {
-        width: vars.spacing[10],
-        height: vars.spacing[10],
+        width: vars.spacing.spacing10,
+        height: vars.spacing.spacing10,
         fontSize: vars.typography.fontSize.md
       },
       lg: {
-        width: vars.spacing[12],
-        height: vars.spacing[12],
+        width: vars.spacing.spacing12,
+        height: vars.spacing.spacing12,
         fontSize: vars.typography.fontSize.lg
       },
       xl: {
-        width: vars.spacing[16],
-        height: vars.spacing[16],
+        width: vars.spacing.spacing16,
+        height: vars.spacing.spacing16,
         fontSize: vars.typography.fontSize.xl
       },
       '2xl': {
-        width: vars.spacing[24],
-        height: vars.spacing[24],
+        width: vars.spacing.spacing24,
+        height: vars.spacing.spacing24,
         fontSize: vars.typography.fontSize['2xl']
       }
     },
@@ -200,7 +200,7 @@ export const avatarGroup = style({
 
   selectors: {
     '& > *:not(:first-child)': {
-      marginLeft: `-${vars.spacing[2]}`
+      marginLeft: `-${vars.spacing.spacing2}`
     }
   }
 });
